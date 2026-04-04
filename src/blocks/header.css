@@ -88,7 +88,6 @@ body {
     width: 100px;
     height: 133px;
     z-index: 10;
-    margin-left: 50px;
 }
 
 .header__image {
@@ -220,9 +219,7 @@ body {
     transition-duration: 0.3s;
     transition-timing-function: ease;
     border-width: 0;
-    cursor: pointer;
-    margin-right: 50px;
-    
+    cursor: pointer; 
 }
 
 .header__btn-text {
@@ -304,7 +301,7 @@ body {
     }
 
     .header__container {
-        justify-content: flex-start; /* оставляем, элементы идут слева */
+        justify-content: flex-start;
     }
 
     .header__logo-wrapper {
@@ -323,10 +320,8 @@ body {
 
     .header__title {
         display: block;
-        /* Убираем auto-отступы, которые центрировали заголовок */
-        margin-left: 150px;   /* фиксированный отступ от логотипа */
+        margin-left: 150px;
         margin-right: 51;
-        /* При желании можно добавить margin-right: 40px, чтобы увеличить расстояние до навигации */
     }
 
     .header__drawer {
