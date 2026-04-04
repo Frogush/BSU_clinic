@@ -1,32 +1,29 @@
 import "../styles/index.css"
 
-document.addEventListener('DOMContentLoaded', () => {
-    const burgerBtn = document.getElementById('burger-btn');
-    const mobileDrawer = document.getElementById('mobile-drawer');
-    const mobileOverlay = document.getElementById('mobile-overlay');
-    const body = document.body;
+const burger = document.querySelector('.header__burger');
+const sidebar = document.querySelector('.header__sidebar');
+const overlay = document.querySelector('.header__overlay');
+const closeBtn = document.querySelector('.header__sidebar-close');
+const page = document.querySelector('.page');
 
-    const toggleMenu = () => {
-        burgerBtn.classList.toggle('header__burger_active');
-        mobileDrawer.classList.toggle('header__drawer_active');
-        mobileOverlay.classList.toggle('header__overlay_active');
-        
-        if (mobileDrawer.classList.contains('header__drawer_active')) {
-            body.style.overflow = 'hidden';
-        } else {
-            body.style.overflow = '';
-        }
-    };
+function openMenu() {
+  sidebar.classList.add('header__sidebar_opened');
+  overlay.classList.add('header__overlay_active');
+  page.style.overflow = 'hidden';
+}
 
-    burgerBtn.addEventListener('click', toggleMenu);
-    mobileOverlay.addEventListener('click', toggleMenu);
+function closeMenu() {
+  sidebar.classList.remove('header__sidebar_opened');
+  overlay.classList.remove('header__overlay_active');
+  page.style.overflow = '';
+}
 
-    window.addEventListener('resize', () => {
-        if (window.innerWidth >= 1440 && mobileDrawer.classList.contains('header__drawer_active')) {
-            burgerBtn.classList.remove('header__burger_active');
-            mobileDrawer.classList.remove('header__drawer_active');
-            mobileOverlay.classList.remove('header__overlay_active');
-            body.style.overflow = '';
-        }
-    });
+burger.addEventListener('click', openMenu);
+closeBtn.addEventListener('click', closeMenu);
+overlay.addEventListener('click', closeMenu);
+
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeMenu();
+  }
 });
