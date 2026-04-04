@@ -1,21 +1,47 @@
 {
-  "name": "bsu_clinic",
+  "name": "mesto",
   "version": "1.0.0",
-  "description": "",
+  "description": "A small social gallery for posting and liking photos. Built with HTML/CSS/JS using WebPack",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --mode production",
+    "dev": "webpack serve",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist -r https://github.com/Frogush/mesto.git"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Frogush/BSU_clinic.git"
+    "url": "git+https://github.com/Frogush/mesto.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/Frogush/BSU_clinic/issues"
+    "url": "https://github.com/Frogush/mesto/issues"
   },
-  "homepage": "https://github.com/Frogush/BSU_clinic#readme"
+  "homepage": "https://github.com/Frogush/mesto",
+  "devDependencies": {
+    "@babel/core": "^7.28.4",
+    "@babel/preset-env": "^7.28.3",
+    "autoprefixer": "^10.4.21",
+    "babel-loader": "^10.0.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^7.1.2",
+    "cssnano": "^7.1.1",
+    "file-loader": "^6.2.0",
+    "gh-pages": "^6.3.0",
+    "html-webpack-plugin": "^5.6.4",
+    "mini-css-extract-plugin": "^2.9.4",
+    "postcss": "^8.5.6",
+    "postcss-loader": "^8.2.0",
+    "prettier": "^3.6.2",
+    "style-loader": "^4.0.0",
+    "stylelint": "^16.25.0",
+    "webpack": "^5.102.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  },
+  "dependencies": {
+    "core-js": "^3.46.0"
+  }
 }

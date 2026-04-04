@@ -1,1 +1,1 @@
-# BSU_clinic
+# BSU Clinic
