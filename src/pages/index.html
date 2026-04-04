@@ -1,10 +1,67 @@
 <!DOCTYPE html>
-<html lang="RU">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Поликлиника БелГУ</title>
-    </head>
-    <body class="page">
-    </body>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поликлиника БелГУ</title>
+</head>
+<body>
+
+<header class="header">
+    <div class="header__container container">
+        <button class="header__burger" id="burger-btn" aria-label="Меню">
+            <span class="header__burger-line"></span>
+            <span class="header__burger-line"></span>
+            <span class="header__burger-line"></span>
+        </button>
+
+        <div class="header__logo-wrapper">
+            <a href="/" class="header__logo">
+                <picture class="header__picture">
+                    <source media="(min-width: 1440px)" srcset="<%=require('../images/desktop_icon.png')%>">
+                    <img src="<%=require('../images/mobile_icon.png')%>" alt="Логотип" class="header__image" width="100" height="133">
+                </picture>
+            </a>
+        </div>
+
+        <span class="header__title">Поликлиника<br> БелГУ</span>
+
+        <div class="header__drawer" id="mobile-drawer">
+            <span class="header__drawer-title">Поликлиника БелГУ</span>
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item">
+                        <a href="#" class="header__nav-link header__nav-link_active">Главная</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#" class="header__nav-link">О нас</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#" class="header__nav-link">Для пациента</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#" class="header__nav-link">Новости</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#" class="header__nav-link">Специалисты</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#" class="header__nav-link">Услуги</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <a href="#" class="header__btn">
+            <span class="header__btn-text">Админ&nbsp<br class="header__btn-br"> панель</span>
+            <svg class="header__btn-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12H19M19 12L12 5M19 12L12 19" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+
+        <div class="header__overlay" id="mobile-overlay"></div>
+    </div>
+</header>
+
+</body>
 </html>
