@@ -1,0 +1,159 @@
+.about-info 
+{
+    width: 100%;
+    background-color: #ffffff;
+    padding: 40px 0;
+  }
+  
+  .about-info__container 
+  {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+  
+  .about-info__column 
+  {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .about-info__title 
+  {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.2;
+    color: #252b42;
+    margin: 0;
+  }
+  
+  .about-info__text 
+  {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #737373;
+    margin: 0;
+  }
+  
+  @media (max-width: 767px) 
+  {
+    .about-details__container 
+    {
+      padding: 0 25px;
+      box-sizing: border-box;
+      overflow-x: hidden; 
+    }
+  
+    .about-details__header 
+    {
+      padding-left: 15px;
+      margin-bottom: 25px;
+    }
+  
+    .about-details__card 
+    {
+      padding: 30px;
+      gap: 15px;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+      width: 100%; 
+    }
+  
+    .about-details__main-title 
+    {
+      font-size: 22px;
+      line-height: 1.2;
+    }
+  
+    .about-details__subtitle 
+    {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+  
+    .about-details__card-title 
+    {
+      font-size: 18px;
+    }
+  
+    .about-details__text 
+    {
+      font-size: 18px;
+      line-height: 1.4;
+    }
+  
+    .about-details__list 
+    {
+      padding-left: 15px;
+      font-size: 16px;
+    }
+  
+    .about-details__list li 
+    {
+      font-size: 16px;
+    }
+  }
+  
+  @media (min-width: 768px) 
+  {
+    .about-info__container 
+    {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 0 30px;
+    }
+  
+    .about-details__header 
+    {
+      padding-left: 0; 
+    }
+  
+    .about-details__card 
+    {
+      padding: 25px;
+      gap: 20px;
+    }
+  
+    .about-details__main-title 
+    {
+      font-size: 32px;
+    }
+  
+    .about-details__subtitle 
+    {
+      font-size: 18px;
+    }
+  }
+
+  @media (min-width: 1440px) 
+  {
+    .about-info 
+    {
+      padding: 60px 0;
+    }
+  
+    .about-info__container 
+    {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      padding: 0 60px;
+    }
+  
+    .about-info__title 
+    {
+      font-size: 32px;
+    }
+  
+    .about-info__text 
+    {
+      font-size: 18px;
+    }
+  }
