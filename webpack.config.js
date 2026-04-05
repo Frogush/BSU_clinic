@@ -1,5 +1,6 @@
 // Подключаем встроенный модуль Node.js для работы с путями файловой системы
 const path = require("path");
+const fs = require("fs"); // Модуль для работы с файловой системой
 
 // Плагин для автоматического создания HTML-файла с подключёнными бандлами
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -10,17 +11,48 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 // Плагин для извлечения CSS в отдельные файлы
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+// Получаем список всех HTML-файлов из папки src/pages
+const pagesDir = path.resolve(__dirname, "src/pages");
+const htmlFiles = fs.readdirSync(pagesDir).filter(fileName => fileName.endsWith(".html"));
+
+// Генерируем точки входа (Entry Points) и плагины для HTML автоматически
+const entryPoints = {};
+const htmlPlugins = htmlFiles.map(fileName => {
+  const pageName = fileName.replace(".html", ""); // например, "about" или "index"
+  
+  // Добавляем JS-файл в точки входа, если он существует
+  // Если для страницы нет своего JS, можно использовать общий или проверять наличие
+  const scriptPath = `./src/scripts/${pageName}.js`;
+  if (fs.existsSync(path.resolve(__dirname, scriptPath))) {
+    entryPoints[pageName] = scriptPath;
+  } else {
+    // Если JS файла конкретно под страницу нет, можно подключить какой-то дефолтный
+    entryPoints[pageName] = "./src/scripts/index.js"; 
+  }
+
+  // Настраиваем путь выхода для HTML
+  // index.html в корень, остальные в папку pages/
+  const outputHtmlPath = pageName === "index" ? "index.html" : `pages/${pageName}.html`;
+
+  return new HtmlWebpackPlugin({
+    template: `./src/pages/${fileName}`,
+    filename: outputHtmlPath,
+    chunks: [pageName], // Подключаем только соответствующий этой странице JS/CSS
+    minify: false // Можно включить для продакшена
+  });
+});
+
 // Экспортируем объект конфигурации Webpack
 module.exports = {
   // Точка входа — главный JavaScript-файл приложения
-  entry: { main: "./src/scripts/index.js" },
+  entry: entryPoints,
 
   // Настройки выхода — куда и как будет собираться проект
   output: {
     // Папка, куда Webpack будет складывать сборку
     path: path.resolve(__dirname, "dist"),
     // Имя итогового JS-файла
-    filename: "main.js",
+    filename: "scripts/[name].[contenthash].js",
     // Публичный путь — нужен для корректной работы роутинга и загрузки ресурсов
     publicPath: "/",
   },
@@ -96,12 +128,12 @@ module.exports = {
   // Подключаем плагины для расширения возможностей сборки
   plugins: [
     // Создаёт HTML-файл на основе шаблона и автоматически подключает JS/CSS
-    new HtmlWebpackPlugin({
-      template: "./src/pages/index.html",
-    }),
+    ...htmlPlugins,
     // Очищает папку dist перед новой сборкой
     new CleanWebpackPlugin(),
     // Выносит CSS в отдельные файлы
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: "styles/[name].[contenthash].css", // Чтобы стили лежали в dist/styles/
+    }),
   ],
 };
