@@ -1,0 +1,118 @@
+.feedback {
+  width: 100%;
+  padding: 40px 0;
+  background-color: #F8FAFF;
+}
+
+.feedback__container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 10px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.feedback__card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 30px 20px;
+  border: 2px solid #0061FF;
+  border-radius: 10px;
+  background-color: #FFF;
+  text-align: center;
+}
+
+.feedback__content {
+  margin-bottom: 25px;
+}
+
+.feedback__title {
+  margin-bottom: 10px;
+  color: #2D3135;
+  font-family: Montserrat, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.feedback__description {
+  color: #6D7278;
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.feedback__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 15px 20px;
+  border-radius: 10px;
+  color: #FFF;
+  background-color: #0061FF;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+  text-transform: uppercase;
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.feedback__button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px #0061FF;
+}
+
+.feedback__button:hover {
+  opacity: 0.9;
+}
+
+@media screen and (min-width: 768px) {
+  .feedback__container {
+    padding: 0 45px;
+    gap: 30px;
+  }
+
+  .feedback__card {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: left;
+    gap: 40px;
+  }
+
+  .feedback__content {
+    margin-bottom: 0;
+  }
+
+  .feedback__title {
+    font-size: 24px;
+  }
+
+  .feedback__description {
+    font-size: 16px;
+  }
+
+  .feedback__button {
+    width: auto;
+    min-width: 300px;
+    border-radius: 50px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .feedback__card {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1400px;
+    padding: 40px 60px;
+    margin: 0 auto;
+    text-align: left;
+  }
+}

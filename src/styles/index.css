@@ -3,4 +3,7 @@
 @import url('../vendor/fonts.css');
 @import url('../blocks/header.css');
 @import url('../blocks/footer.css');
-@import url('../blocks/index.css');
+@import url('../blocks/features_section.css');
+@import url('../blocks/services_section.css');
+@import url('../blocks/corporate_section.css');
+@import url('../blocks/feedback_section.css');
