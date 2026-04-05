@@ -45,6 +45,10 @@
   padding-left: 20px;
 }
 
+.header__logo-img:focus-visible {
+  outline: 20px #0061FF solid;
+}
+
 .header__desktop-group {
   display: none;
 }

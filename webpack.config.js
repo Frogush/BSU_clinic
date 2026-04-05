@@ -38,7 +38,6 @@ const htmlPlugins = htmlFiles.map(fileName => {
     template: `./src/pages/${fileName}`,
     filename: outputHtmlPath,
     chunks: [pageName], // Подключаем только соответствующий этой странице JS/CSS
-    minify: false // Можно включить для продакшена
   });
 });
 
