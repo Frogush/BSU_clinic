@@ -1,0 +1,240 @@
+.specialists-page {
+    width: 100%;
+}
+
+.specialist-detailed {
+    background-color: #f0f5ff;
+}
+
+.specialist-detailed__container {
+    max-width: 1500px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+.specialists-page__title {
+    margin-bottom: 30px;
+    color: #2d3135;
+    font-family: Montserrat, sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.detailed-card {
+    position: relative;
+    padding: 20px;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 4px 30px #0000001a;
+}
+
+.detailed-card__arrow {
+    position: absolute;
+    z-index: 10;
+    top: 150px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+}
+
+.detailed-card__arrow_prev {
+    left: 10px;
+}
+.detailed-card__arrow_next {
+    right: 10px;
+}
+
+.detailed-card__image-box {
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 15px;
+}
+
+.detailed-card__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.detailed-card__counter {
+    margin-bottom: 10px;
+    color: #6d7278;
+    font-size: 12px;
+}
+
+.detailed-card__name {
+    margin-bottom: 10px;
+    color: #2d3135;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.detailed-card__titles {
+    margin-bottom: 20px;
+    color: #0061ff;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.detailed-card__stats-row {
+    display: grid;
+    margin-bottom: 20px;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.detailed-card__stat-value {
+    display: block;
+    color: #2d3135;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.detailed-card__stat-label {
+    color: #6d7278;
+    font-size: 12px;
+}
+
+.detailed-card__btn {
+    max-width: 210px;
+    padding: 12px;
+    border-radius: 8px;
+    color: #fff;
+    background: #0061ff;
+    text-align: center;
+    font-weight: 700;
+    text-decoration: none;
+    grid-column: span 2;
+}
+
+.detailed-card__divider,
+.detailed-card__education {
+    display: none;
+}
+
+.specialist-grid-section__container {
+    max-width: 1800px;
+    padding: 40px 10px;
+    margin: 0 auto;
+}
+
+.specialists-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.grid-card {
+    overflow: hidden;
+    width: 300px;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0 4px 20px #0000000d;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.grid-card_active {
+    border-color: #0061ff;
+    box-shadow: 0 4px 30px #0061ff33;
+    transform: scale(1.02);
+}
+
+.grid-card__img {
+    width: 100%;
+    height: 300px;
+    background: #ebf3ff;
+    object-fit: cover;
+}
+
+.grid-card__info {
+    padding: 15px;
+}
+
+.grid-card__name {
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.grid-card__titles {
+    color: #0061ff;
+    font-size: 11px;
+}
+
+@media screen and (min-width: 768px) {
+    .specialist-detailed__container,
+    .specialist-grid-section__container {
+        padding: 40px 100px;
+    }
+    .grid-card {
+        width: calc(50% - 10px);
+        max-width: 300px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .specialist-detailed__container,
+    .specialist-grid-section__container {
+        padding: 25px 200px;
+    }
+    .detailed-card {
+        height: 500px;
+        padding: 40px;
+    }
+    .detailed-card__inner {
+        display: flex;
+        gap: 40px;
+    }
+    .detailed-card__image-box {
+        flex: 0 0 350px;
+        height: 420px;
+        margin-bottom: 0;
+    }
+    .detailed-card__arrow {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .detailed-card__arrow_prev {
+        left: -60px;
+    }
+    .detailed-card__arrow_next {
+        right: -60px;
+    }
+    .detailed-card__stats-row {
+        align-items: center;
+        grid-template-columns: auto auto 1fr;
+    }
+    .detailed-card__btn {
+        padding: 12px 30px;
+        border-radius: 50px;
+        grid-column: auto;
+    }
+    .detailed-card__divider {
+        display: block;
+        height: 1px;
+        margin: 30px 0;
+        background: #e5e5e5;
+    }
+    .detailed-card__education {
+        display: block;
+        overflow: hidden;
+        height: 150px;
+    }
+    .detailed-card__edu-list {
+        line-height: 1.6;
+        padding-left: 20px;
+        color: #6d7278;
+        list-style: disc;
+        font-size: 14px;
+    }
+    .grid-card {
+        width: calc(25% - 15px);
+    }
+}
