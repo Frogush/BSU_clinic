@@ -1,40 +1,47 @@
 .news {
   width: 100%;
-  padding: 0;
-  background-color: #FFFFFF;
+  background-color: #FFF;
 }
 
 .news__container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   max-width: 1800px;
-  padding: 0 20px;
+  padding: 0 10px;
   margin: 0 auto;
 }
 
+/* Ограничиваем ширину контента как у сетки */
+.news__content-wrapper {
+  width: 100%;
+  max-width: 1400px;
+}
+
+/* Заголовок ровно по левому краю сетки */
 .news__title {
   margin-bottom: 40px;
   color: #2D3135;
-  text-align: left;
   font-family: Montserrat, sans-serif;
   font-size: 28px;
   font-weight: 700;
 }
 
+/* 🔥 Нормальная сетка */
 .news__grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
+  display: grid;
   margin-bottom: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
 }
 
+/* Карточка */
 .news-card {
   display: flex;
   overflow: hidden;
   flex-direction: column;
-  width: 300px;
   border-radius: 12px;
-  background-color: #FFFFFF;
+  background-color: #FFF;
   box-shadow: 0 4px 20px #0000001A;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -104,12 +111,13 @@
   color: #6D7278;
   font-family: Montserrat, sans-serif;
   font-size: 12px;
-  font-weight: 400;
 }
 
 .news-card__views {
   display: flex;
   align-items: center;
+  color: #6D7278;
+  font-size: 12px;
   gap: 6px;
 }
 
@@ -119,18 +127,13 @@
   margin: 0 auto;
   border: none;
   border-radius: 8px;
-  color: #FFFFFF;
+  color: #FFF;
   background-color: #0061FF;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
   font-family: Montserrat, sans-serif;
   font-size: 14px;
   font-weight: 700;
-}
-
-.news__more-btn:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px #0061FF;
 }
 
 .news__more-btn:hover {
@@ -138,28 +141,20 @@
   box-shadow: 0 4px 15px #0061FF4D;
 }
 
-.news__more-btn:active {
-  transform: scale(0.97);
-}
-
+/* 📱 Адаптив */
 @media screen and (min-width: 768px) {
   .news__container {
-    padding: 0 40px;
+    padding: 0 100px;
   }
 
   .news__grid {
     gap: 25px;
   }
-
-  .news-card {
-    flex: 0 1 350px;
-    min-width: 300px;
-  }
 }
 
 @media screen and (min-width: 1440px) {
   .news__container {
-    padding: 0 100px;
+    padding: 0 200px;
   }
 
   .news__grid {

@@ -218,6 +218,7 @@
 
   .docs-nav__container {
     flex-direction: row;
+    padding: 0 200px;
   }
 
   .docs-nav__item {
@@ -236,6 +237,10 @@
 
   .docs-item__number {
     font-size: 40px;
+  }
+
+  .docs-section__container {
+    padding: 0 200px;
   }
 
   .docs-section__title {
