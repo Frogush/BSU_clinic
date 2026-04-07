@@ -1,0 +1,129 @@
+.contacts-info {
+  width: 100%;
+  padding: 25px 0;
+  background-color: #FFFFFF;
+}
+
+.contacts-info__container {
+  max-width: 1800px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.contacts-info__title {
+  line-height: 1.2;
+  margin-bottom: 30px;
+  color: #2D3135;
+  font-family: Montserrat, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.contacts-info__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contacts-info__card {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 20px;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  box-shadow: 0 13px 19px 0 #00000040;
+}
+
+.contacts-info__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  gap: 15px;
+}
+
+.contacts-info__icon-box {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #0061FF;
+}
+
+.contacts-info__title-group {
+  flex-grow: 1;
+}
+
+.contacts-info__card-title {
+  margin-bottom: 8px;
+  color: #2D3135;
+  font-family: Montserrat, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.contacts-info__line {
+  width: 100%;
+  height: 2px;
+  background-color: #0061FF;
+}
+
+.contacts-info__content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contacts-info__list {
+  padding-left: 15px;
+  color: #6D7278;
+  list-style: disc;
+}
+
+.contacts-info__list-item,
+.contacts-info__text {
+  line-height: 1.6;
+  color: #6D7278;
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+}
+
+.contacts-info__list-item {
+  margin-bottom: 8px;
+}
+
+@media screen and (min-width: 768px) {
+  .contacts-info__container {
+    padding: 0 100px;
+  }
+
+  .contacts-info__grid {
+    align-items: stretch;
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .contacts-info__card {
+    flex: 1 1 0;
+  }
+
+  .contacts-info__line {
+    width: 60px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .contacts-info__container {
+    padding: 0 300px;
+  }
+
+  .contacts-info__title {
+    font-size: 36px;
+  }
+
+  .contacts-info__card {
+    padding: 40px 30px;
+  }
+}

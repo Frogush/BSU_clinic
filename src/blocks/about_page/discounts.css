@@ -1,0 +1,141 @@
+.discounts {
+  width: 100%;
+  padding: 40px 0;
+  background-color: #F0F5FF;
+}
+
+.discounts__container {
+  max-width: 1800px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.discounts__title {
+  margin-bottom: 30px;
+  color: #2D3135;
+  text-align: left;
+  font-family: Montserrat, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.discounts__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.discounts__item {
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: #FFFFFF;
+  box-shadow: 0 4px 20px #0000001A;
+  transition: box-shadow 0.3s ease;
+}
+
+.discounts__item:hover {
+  box-shadow: 0 8px 30px #00000026;
+}
+
+.discounts__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 25px 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.discounts__header:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 2px #0061FF;
+}
+
+.discounts__item-title {
+  padding-right: 20px;
+  color: #2D3135;
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.discounts__arrow {
+  flex-shrink: 0;
+  transition: transform 0.4s ease, filter 0.3s ease;
+}
+
+.discounts__header:hover .discounts__arrow {
+  filter: drop-shadow(0 0 5px #0061FF4D);
+}
+
+.discounts__item_opened .discounts__arrow {
+  transform: rotate(90deg);
+}
+
+.discounts__body {
+  display: grid;
+  transition: grid-template-rows 0.4s ease;
+  grid-template-rows: 0fr;
+}
+
+.discounts__item_opened .discounts__body {
+  grid-template-rows: 1fr;
+}
+
+.discounts__content {
+  overflow: hidden;
+}
+
+.discounts__text {
+  line-height: 1.6;
+  padding: 0 20px 30px;
+  color: #6D7278;
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+}
+
+.discounts__text-list {
+  line-height: 1.8;
+  padding: 0 20px 30px 40px;
+  color: #6D7278;
+  list-style: disc;
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+}
+
+@media screen and (min-width: 768px) {
+  .discounts__container {
+    padding: 0 100px;
+  }
+
+  .discounts__item-title {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .discounts__container {
+    padding: 0 200px;
+  }
+
+  .discounts__title {
+    font-size: 32px;
+  }
+
+  .discounts__header {
+    padding: 30px 40px;
+  }
+
+  .discounts__text, .discounts__text-list {
+    padding-right: 40px;
+    padding-left: 40px;
+    font-size: 16px;
+  }
+  
+  .discounts__text-list {
+    padding-left: 60px;
+  }
+}

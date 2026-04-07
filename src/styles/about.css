@@ -3,10 +3,9 @@
 @import url('../vendor/fonts.css');
 @import url('../blocks/header.css');
 @import url('../blocks/footer.css');
-@import url('../blocks/about_page/about_hero.css');
 @import url('../blocks/about_page/about_info.css');
-@import url('../blocks/about_page/about_details.css');
-@import url('../blocks/about_page/benefits.css');
-@import url('../blocks/about_page/contacts.css');
+@import url('../blocks/about_page/discounts.css');
+@import url('../blocks/about_page/contacts-info.css');
 @import url('../blocks/about_page/addresses.css');
-@import url('../blocks/about_page/feedback.css');
+@import url('../blocks/about_page/review.css');
+@import url('../blocks/about_page/about-nav.css');

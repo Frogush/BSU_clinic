@@ -1,156 +1,146 @@
-  .addresses 
-  {
-    padding: 10px 0; 
-    background-color: #dbecff;
-  }
-  
-  .addresses__container 
-  {
-    width: 100%;
-    max-width: 100%; 
-    margin: 0;
-    padding: 0 10px; 
-    box-sizing: border-box;
-  }
-  
-  .addresses__content 
-  {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  
-  .addresses__info 
-  {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    padding-left: calc((100% - 1390px) / 2 + 15px); 
-    padding-right: 20px;
-    box-sizing: border-box;
-  }
-  
-  @media (max-width: 1440px) 
-  {
-    .addresses__info 
-    {
-      padding-left: 25px; 
-    }
-  }
-  
-  @media (min-width: 1441px) 
-  {
-    .addresses__info 
-    {
-      padding-left: calc((100% - 1600px) / 2 + 15px);
-    }
-  }
-  
-  @media (min-width: 1921px) 
-  {
-    .addresses__info 
-    {
-      padding-left: calc((100% - 1800px) / 2 + 15px);
-    }
-  }
-  
-  .addresses__main-title 
-  {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 700;
-    font-size: 44px;
-    color: #1a1c23;
-    margin: 0 !important; 
-    padding: 0 !important;
-    line-height: 1; 
-    text-align: left;
-  }
-  
-  .addresses__sub-title 
-  {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 700;
-    font-size: 22px;
-    color: #1a1c23;
-    margin: 0 0 10px 0 !important; 
-    line-height: 1.2;
-  }
-  
-  .addresses__map-wrapper 
-  {
-    width: 100%;
-    height: 450px;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-  }
-  
-  @media (min-width: 1024px) 
-  {
-    .addresses__content 
-    {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: flex-start; 
-      gap: 40px;
-    }
-  
-    .addresses__info 
-    {
-      flex: 0 1 500px;
-      align-self: center; 
-      padding-top: 20px;
-      padding-bottom: 20px;
-    }
-  
-    .addresses__map-wrapper 
-    {
-      flex: 0 0 60%; 
-      height: 650px; 
-      margin-right: 0; 
-    }
+.addresses {
+  width: 100%;
+  padding: 25px 0;
+  background-color: #F0F5FF;
+}
+
+.addresses__container {
+  max-width: 1800px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.addresses__title {
+  margin-bottom: 10px;
+  color: #2D3135;
+  font-family: Montserrat, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.addresses__layout {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.addresses__content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.addresses__subtitle {
+  margin-bottom: 20px;
+  color: #2D3135;
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.addresses__item {
+  display: flex;
+  align-items: center; /* Центрируем иконку и текст */
+  margin-bottom: 15px;
+  gap: 15px;
+}
+
+.addresses__icon {
+  flex-shrink: 0;
+}
+
+.addresses__text {
+  line-height: 1.2; /* Уменьшил межстрочный интервал для лучшего центрирования */
+  color: #2D3135;
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+}
+
+.addresses__sublist {
+  display: flex;
+  flex-direction: column;
+  padding-left: 35px;
+  gap: 10px;
+}
+
+.addresses__sublist-item {
+  position: relative;
+  padding-left: 20px;
+  color: #2D3135;
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+}
+
+.addresses__sublist-item::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #0061FF;
+  content: "";
+  transform: translateY(-50%);
+}
+
+.addresses__map-wrapper {
+  overflow: hidden;
+  width: 100%;
+  height: 400px; /* Фиксированная высота для мобильных */
+  border-radius: 15px;
+  box-shadow: 0 4px 20px #0000001A;
+}
+
+.addresses__map-container {
+  width: 100%;
+  height: 100%;
+}
+
+.addresses__map-container ymaps {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+@media screen and (min-width: 968px) {
+  .addresses__container {
+    padding: 25px 100px;
   }
 
-  .addresses__item 
-  {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-  }
-  
-  .addresses__marker-icon 
-  { 
-    flex-shrink: 0; margin-top: 4px; 
+  .addresses__layout {
+    align-items: center;
+    flex-direction: row;
+    gap: 40px;
   }
 
-  .addresses__text 
-  { 
-    font-family: "Montserrat", sans-serif; 
-    font-size: 18px; 
-    margin: 0; 
+  .addresses__content {
+    flex: 0 0 350px;
   }
 
-  .addresses__list 
-  { 
-    list-style: none; 
-    padding-left: 32px; 
-    margin: 5px 0 0 0; 
+  .addresses__map-wrapper {
+    flex: 1;
+    height: 500px; /* Увеличил высоту для десктопа */
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .addresses__container {
+    padding: 25px 200px;
   }
 
-  .addresses__list li 
-  { 
-    font-family: "Montserrat", sans-serif; 
-    font-size: 16px; 
-    margin-bottom: 5px; 
-    position: relative; 
+  .addresses__title {
+    font-size: 36px;
   }
 
-  .addresses__list li::before 
-  { 
-    content: "•"; 
-    color: #0061ff; 
-    font-size: 20px; 
-    position: absolute; 
-    left: -20px; 
-    top: -2px; 
+  .addresses__content {
+    flex: 0 0 500px;
   }
+
+  .addresses__map-wrapper {
+    height: 600px; /* Карта будет выглядеть пропорционально блоку адресов */
+  }
+
+  .addresses__text,
+  .addresses__sublist-item {
+    font-size: 18px;
+  }
+}

@@ -27,3 +27,21 @@ window.addEventListener('keydown', (e) => {
     closeMenu();
   }
 });
+
+document.querySelectorAll('.discounts__header').forEach(header => {
+  header.addEventListener('click', () => {
+    const item = header.closest('.discounts__item');
+    const isOpened = item.classList.contains('discounts__item_opened');
+    
+    // Закрываем другие, если нужно (опционально)
+    // document.querySelectorAll('.discounts__item').forEach(el => el.classList.remove('discounts__item_opened'));
+
+    if (isOpened) {
+      item.classList.remove('discounts__item_opened');
+      header.setAttribute('aria-expanded', 'false');
+    } else {
+      item.classList.add('discounts__item_opened');
+      header.setAttribute('aria-expanded', 'true');
+    }
+  });
+});

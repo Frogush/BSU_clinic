@@ -3,3 +3,5 @@
 @import url('../vendor/fonts.css');
 @import url('../blocks/header.css');
 @import url('../blocks/footer.css');
+@import url('../blocks/services_page/services-prices.css');
+@import url('../blocks/services_page/appointment.css');
