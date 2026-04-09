@@ -1,0 +1,1 @@
+(()=>{"use strict";!function(){const o=document.getElementById("scroll-to-top");o&&(window.addEventListener("scroll",()=>{window.scrollY>500?o.classList.add("scroll-top_visible"):o.classList.remove("scroll-top_visible")}),o.addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"})}))}()})();

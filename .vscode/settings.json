@@ -1,0 +1,16 @@
+{
+    // Включаем Stylelint только в проекте с конфигом
+    "stylelint.enable": true,
+    "stylelint.validate": ["css", "scss", "less"],
+
+    // Отключаем встроенную проверку, чтобы избежать конфликтов с Stylelint
+    "css.validate": false,
+    "less.validate": false,
+    "scss.validate": false,
+
+    // Назначаем Prettier как форматтер по умолчанию
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+
+    // Включаем автоформат при сохранении
+    // "editor.formatOnSave": true
+}
