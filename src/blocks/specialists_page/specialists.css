@@ -111,6 +111,7 @@
 }
 
 .detailed-card__name {
+    min-height: 36px;
     margin-bottom: 5px;
     color: #2d3135;
     font-size: 18px;
@@ -118,6 +119,7 @@
 }
 
 .detailed-card__titles {
+    min-height: 26px;
     margin-bottom: 15px;
     color: #0061ff;
     font-size: 13px;
@@ -291,6 +293,7 @@
     }
 
     .detailed-card__name {
+        min-height: 48px;
         margin-bottom: 10px;
         font-size: 24px;
     }
@@ -351,7 +354,7 @@
     .detailed-card__education {
         overflow-x: hidden;
         overflow-y: auto;
-        max-height: 230px;
+        max-height: 210px;
     }
 }
 

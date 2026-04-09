@@ -26,6 +26,8 @@
 
 .hero__subtitle {
     color: #0061ff;
+    animation-name: fadeUp;
+    animation-delay: 0.2s;
     font-family: Montserrat, sans-serif;
     font-size: 12px;
     font-weight: 700;
@@ -34,6 +36,8 @@
 .hero__title {
     line-height: 1.2;
     color: #2d3135;
+    animation-name: fadeUp;
+    animation-delay: 0.4s;
     font-family: Montserrat, sans-serif;
     font-size: 16px;
     font-weight: 700;
@@ -41,9 +45,17 @@
 
 .hero__description {
     display: none;
+    animation-name: fadeUp;
+    animation-delay: 0.6s;
+}
+
+.hero__appointment-link {
+    animation-name: fadeUp;
+    animation-delay: 0.8s;
 }
 
 .hero__appointment-btn {
+    width: 100%;
     padding: 10px;
     border: none;
     border-radius: 5px;
@@ -79,6 +91,9 @@
     justify-content: center;
     min-width: 150px;
     max-width: 200px;
+    animation-name: imageAppear;
+    animation-duration: 0.6s;
+    animation-delay: 0.1s;
 }
 
 .hero__img {
@@ -278,4 +293,39 @@
     .features__container {
         padding: 0 200px;
     }
+}
+
+/* Анимация для текста: плавное всплытие снизу вверх */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Анимация для картинки: мягкое появление и легкое масштабирование */
+@keyframes imageAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateX(0);
+    }
+}
+
+.hero__subtitle, 
+.hero__title, 
+.hero__description, 
+.hero__appointment-link,
+.hero__image-column {
+    opacity: 0;
+    animation-duration: 0.4s;
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation-fill-mode: forwards;
 }
