@@ -7,11 +7,11 @@
     "build": "webpack --mode production",
     "dev": "webpack serve",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist -r https://github.com/Frogush/mesto.git"
+    "deploy": "gh-pages -d dist -r https://github.com/Frogush/BSU_clinic.git"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Frogush/mesto.git"
+    "url": "git+https://github.com/Frogush/BSU_clinic.git"
   },
   "keywords": [],
   "author": "",
