@@ -90,7 +90,7 @@ module.exports = {
       },
       {
         // Обработка изображений (png, svg, jpg, gif и т.д.)
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
         // Тип ресурса — Webpack сам копирует файл и возвращает ссылку на него
         type: "asset/resource",
         // Настройки генерации имени файлов (папка, оригинальное имя, хэш, расширение)

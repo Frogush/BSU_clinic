@@ -1,53 +1,33 @@
-import "../styles/index.css"
+import "../styles/index.css";
+import { initSidebar } from "../components/sidebar.js";
+import { initModal } from "../components/modal.js";
+import { servicesData } from '../components/data.js';
+import { initScrollTop } from "../components/scroll-top.js";
 
-const burger = document.querySelector('.header__burger');
-const sidebar = document.querySelector('.header__sidebar');
-const sidebarOverlay = document.querySelector('.header__overlay');
-const sidebarClose = document.querySelector('.header__sidebar-close');
-const page = document.querySelector('.page');
+export function initHomeServices() {
+    const grid = document.getElementById('services-grid');
+    const template = document.getElementById('service-card-template');
 
-const modalOpenBtn = document.querySelector('#open-modal');
-const modal = document.querySelector('#modal-corporate');
-const modalOverlay = document.querySelector('.modal__overlay');
-const modalClose = document.querySelector('.modal__close');
+    if (!grid || !template) return;
 
-function openMenu() {
-  sidebar.classList.add('header__sidebar_opened');
-  sidebarOverlay.classList.add('header__overlay_active');
-  page.style.overflow = 'hidden';
+    grid.innerHTML = '';
+
+    servicesData.forEach(service => {
+        const cardClone = template.content.cloneNode(true);
+
+        cardClone.querySelector('.service-card__image').src = service.image;
+        cardClone.querySelector('.service-card__image').alt = service.name;
+        cardClone.querySelector('.service-card__category').textContent = service.category || "Услуга";
+        cardClone.querySelector('.service-card__name').textContent = service.name;
+        cardClone.querySelector('.service-card__description').textContent = service.description;
+
+        cardClone.querySelector('.service-card__link').href = `./pages/services.html?id=${service.id}`;
+
+        grid.appendChild(cardClone);
+    });
 }
 
-function closeMenu() {
-  sidebar.classList.remove('header__sidebar_opened');
-  sidebarOverlay.classList.remove('header__overlay_active');
-  if (!modal.classList.contains('modal_opened')) {
-    page.style.overflow = '';
-  }
-}
-
-function openModal() {
-  modal.classList.add('modal_opened');
-  page.style.overflow = 'hidden';
-}
-
-function closeModal() {
-  modal.classList.remove('modal_opened');
-  if (!sidebar.classList.contains('header__sidebar_opened')) {
-    page.style.overflow = '';
-  }
-}
-
-burger.addEventListener('click', openMenu);
-sidebarClose.addEventListener('click', closeMenu);
-sidebarOverlay.addEventListener('click', closeMenu);
-
-modalOpenBtn.addEventListener('click', openModal);
-modalClose.addEventListener('click', closeModal);
-modalOverlay.addEventListener('click', closeModal);
-
-window.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    closeMenu();
-    closeModal();
-  }
-});
+initSidebar();
+initModal();
+initHomeServices();
+initScrollTop();

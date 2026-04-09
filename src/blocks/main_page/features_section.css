@@ -17,11 +17,10 @@
 
 .hero__text-column {
     display: flex;
-    align-self: flex-start;
+    align-self: center;
     flex-direction: column;
     min-width: 140px;
     max-width: 200px;
-    padding-top: 20px;
     gap: 15px;
 }
 
@@ -51,15 +50,28 @@
     color: #fff;
     background-color: #0061ff;
     cursor: pointer;
-    transition: opacity 0.3s ease;
+    transition:
+        background-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.1s ease;
     font-family: Montserrat, sans-serif;
     font-size: 10px;
     font-weight: 700;
 }
 
+.hero__appointment-btn:hover {
+    background-color: #004ecc;
+    box-shadow: 0 4px 15px #0061ff4d;
+}
+
 .hero__appointment-btn:focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 2px #0061ff;
+    outline: 2px solid #003bb3;
+    outline-offset: 2px;
+}
+
+.hero__appointment-btn:active {
+    background-color: #003bb3;
+    transform: scale(0.97);
 }
 
 .hero__image-column {
@@ -118,9 +130,8 @@
         color: #fff;
         background-color: #0061ff;
         cursor: pointer;
-        transition: opacity 0.3s ease;
         font-family: Montserrat, sans-serif;
-        font-size: 14px;
+        font-size: 16px;
         font-weight: 700;
     }
 }
@@ -204,9 +215,10 @@
 }
 
 .card__title {
+    min-height: 40px;
     color: #2d3135;
     font-family: Montserrat, sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
 }
 
@@ -252,11 +264,15 @@
     .card__title {
         font-size: 20px;
     }
+
+    .card__text {
+        font-size: 16px;
+    }
 }
 
 @media screen and (min-width: 1440px) {
     .features {
-        margin-top: -40px;
+        margin-top: -80px;
     }
 
     .features__container {

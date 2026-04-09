@@ -10,15 +10,15 @@
             <div class="header__container">
                 <button class="header__burger" type="button" aria-label="Открыть меню">
                     <svg
+                        xmlns="http://www.w3.org/2000/svg"
                         width="36"
                         height="25"
-                        viewBox="0 0 36 25"
                         fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 36 25"
                     >
-                        <rect width="36" height="3" rx="1.5" fill="#0061FF" />
-                        <rect y="11" width="36" height="3" rx="1.5" fill="#0061FF" />
-                        <rect y="22" width="36" height="3" rx="1.5" fill="#0061FF" />
+                        <rect width="36" height="3" fill="#0061ff" rx="1.5" />
+                        <rect width="36" height="3" y="11" fill="#0061ff" rx="1.5" />
+                        <rect width="36" height="3" y="22" fill="#0061ff" rx="1.5" />
                     </svg>
                 </button>
 
@@ -26,12 +26,22 @@
                     <picture class="header__logo-picture">
                         <source
                             media="(min-width: 768px)"
+                            type="image/webp"
+                            srcset="<%=require('../images/desktop_icon.webp')%>"
+                        />
+                        <source
+                            media="(min-width: 768px)"
                             srcset="<%=require('../images/desktop_icon.png')%>"
+                        />
+                        <source
+                            type="image/webp"
+                            srcset="<%=require('../images/mobile_icon.webp')%>"
                         />
                         <img
                             class="header__logo-img"
                             src="<%=require('../images/mobile_icon.png')%>"
                             alt="Логотип Поликлиника НИУ БелГУ"
+                            loading="lazy" 
                         />
                     </picture>
                 </a>
@@ -73,17 +83,17 @@
                 <button class="header__admin-btn" type="button">
                     Админ панель
                     <svg
+                        xmlns="http://www.w3.org/2000/svg"
                         width="12"
                         height="10"
-                        viewBox="0 0 12 10"
                         fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 12 10"
                     >
                         <path
+                            fill="#fff"
                             fill-rule="evenodd"
+                            d="M0 5c0-.19.079-.371.22-.505a.77.77 0 0 1 .53-.21h8.688l-3.22-3.064a.7.7 0 0 1-.22-.506c0-.19.08-.371.22-.506A.77.77 0 0 1 6.75 0c.2 0 .39.075.531.21l4.5 4.284A.71.71 0 0 1 12 5a.69.69 0 0 1-.22.506L7.28 9.79a.77.77 0 0 1-.53.209.77.77 0 0 1-.532-.21c-.14-.134-.22-.315-.22-9.075 0 8.38.08 8.198.22 8.064l3.22-3.065H.75a.77.77 0 0 1-.53-.209A.7.7 0 0 1 0 5"
                             clip-rule="evenodd"
-                            d="M0 5C0 4.81059 0.079009 4.62895 0.219646 4.49502C0.360282 4.36109 0.551026 4.28584 0.749916 4.28584H9.43845L6.21831 1.22068C6.07749 1.08658 5.99838 0.904705 5.99838 0.715059C5.99838 0.525414 6.07749 0.343536 6.21831 0.209436C6.35912 0.0753365 6.5501 0 6.74925 0C6.94839 0 7.13937 0.0753365 7.28019 0.209436L11.7797 4.49438C11.8495 4.56072 11.9049 4.63952 11.9427 4.72629C11.9805 4.81305 12 4.90606 12 5C12 5.09394 11.9805 5.18695 11.9427 5.27371C11.9049 5.36048 11.8495 5.43928 11.7797 5.50562L7.28019 9.79056C7.13937 9.92466 6.94839 10 6.74925 10C6.5501 10 6.35912 9.92466 6.21831 9.79056C6.07749 9.65646 5.99838 9.47459 5.99838 0.715059C5.99838 9.0953 6.07749 8.91342 6.21831 8.77932L9.43845 5.71416H0.749916C0.551026 5.71416 0.360282 5.63892 0.219646 5.50499C0.079009 5.37106 0 5.18941 0 5Z"
-                            fill="white"
                         />
                     </svg>
                 </button>
@@ -95,18 +105,18 @@
                 <div class="header__sidebar-content">
                     <button class="header__sidebar-close" type="button" aria-label="Закрыть меню">
                         <svg
+                            xmlns="http://www.w3.org/2000/svg"
                             width="24"
                             height="24"
-                            viewBox="0 0 24 24"
                             fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
                         >
                             <path
-                                d="M18 6L6 18M6 6L18 18"
-                                stroke="#0061FF"
-                                stroke-width="2"
+                                stroke="#0061ff"
                                 stroke-linecap="round"
                                 stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M18 6 6 18M6 6l12 12"
                             />
                         </svg>
                     </button>
@@ -116,14 +126,14 @@
                     <nav class="header__sidebar-nav">
                         <ul class="header__sidebar-list">
                             <li class="header__sidebar-item">
-                                <a
-                                    href="/index.html"
-                                    class="header__sidebar-link header__sidebar-link_active"
-                                    >Главная</a
-                                >
+                                <a href="/index.html" class="header__sidebar-link">Главная</a>
                             </li>
                             <li class="header__sidebar-item">
-                                <a href="/pages/about.html" class="header__sidebar-link">О нас</a>
+                                <a
+                                    href="/pages/about.html"
+                                    class="header__sidebar-link header__sidebar-link_active"
+                                    >О нас</a
+                                >
                             </li>
                             <li class="header__sidebar-item">
                                 <a href="/pages/patients.html" class="header__sidebar-link"
@@ -150,459 +160,696 @@
         </header>
         <main class="main">
             <nav class="about-nav">
-  <div class="about-nav__container">
-    <div class="about-nav__grid">
-      <a href="#about-clinic" class="about-nav__item about-nav__item_orange">
-        <span class="about-nav__text">О поликлинике</span>
-      </a>
+                <div class="about-nav__container">
+                    <div class="about-nav__grid">
+                        <a href="#about-clinic" class="about-nav__item about-nav__item_orange">
+                            <span class="about-nav__text">О поликлинике</span>
+                        </a>
 
-      <a href="#discounts" class="about-nav__item about-nav__item_purple">
-        <span class="about-nav__text">Льготные категории</span>
-      </a>
+                        <a href="#discounts" class="about-nav__item about-nav__item_purple">
+                            <span class="about-nav__text">Льготные категории</span>
+                        </a>
 
-      <a href="#addresses" class="about-nav__item about-nav__item_blue">
-        <span class="about-nav__text">Адреса</span>
-      </a>
+                        <a href="#addresses" class="about-nav__item about-nav__item_blue">
+                            <span class="about-nav__text">Адреса</span>
+                        </a>
 
-      <a href="#review" class="about-nav__item about-nav__item_green">
-        <span class="about-nav__text">Оставить отзыв</span>
-      </a>
+                        <a href="#review" class="about-nav__item about-nav__item_green">
+                            <span class="about-nav__text">Оставить отзыв</span>
+                        </a>
 
-      <a href="#contacts-info" class="about-nav__item about-nav__item_pink">
-        <span class="about-nav__text">Телефоны и режим работы</span>
-      </a>
-    </div>
-  </div>
-</nav>
-<section class="about" id="about-clinic">
-  <div class="about__container">
-    <h2 class="about__title">О поликлинике</h2>
-    <p class="about__subtitle">Многопрофильное лечебно-профилактическое учреждение, оснащенное современным оборудованием.</p>
+                        <a href="#contacts-info" class="about-nav__item about-nav__item_pink">
+                            <span class="about-nav__text">Телефоны и режим работы</span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+            <section class="about" id="about-clinic">
+                <div class="about__container">
+                    <h2 class="about__title">О поликлинике</h2>
+                    <p class="about__subtitle">
+                        Многопрофильное лечебно-профилактическое учреждение, оснащенное современным
+                        оборудованием.
+                    </p>
 
-    <div class="about__grid">
-      <!-- Карточка 1 -->
-      <article class="about-card">
-        <div class="about-card__header">
-          <div class="about-card__icon-box">
-            <svg width="32" height="29" viewBox="0 0 32 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15.9909 2.6555C9.01587 -3.44516 0.14723 1.91505 0.00180337 9.18169C-0.0352563 11.0336 0.499328 12.8375 1.56343 14.5006H8.46066L9.68744 12.4559C10.0437 11.8622 10.9057 11.8431 11.2821 12.4349L13.8705 16.5023L17.6435 8.53724C17.9726 7.84223 18.9532 7.82017 19.3161 8.49411L22.5503 14.5006H30.4184C36.2468 5.39129 24.7279 -4.98611 15.9909 2.6555Z" fill="white"/>
-              <path d="M21.1651 15.8824L18.5443 11.0152L14.8382 18.839C14.5229 19.5046 13.5956 19.5624 13.2002 18.941L10.5148 14.7211L9.79525 15.9203C9.62582 16.2026 9.32072 16.3754 8.99143 16.3754H3.04639C3.23275 16.5704 2.23951 15.5792 15.3297 28.6015C15.6953 28.9653 16.2863 28.9654 16.652 28.6015C29.5407 15.7795 28.7493 16.57 28.9353 16.3754H21.9904C21.6455 16.3754 21.3286 16.1861 21.1651 15.8824Z" fill="white"/>
-            </svg>
-          </div>
-          <div class="about-card__title-group">
-            <h3 class="about-card__title">Современная диагностика</h3>
-            <div class="about-card__line"></div>
-          </div>
-        </div>
-        <div class="about-card__content">
-          <p class="about-card__text">Поликлиника НИУ «БелГУ» – это многопрофильное лечебно-профилактическое медицинское учреждение, оказывающее амбулаторно-поликлиническую помощь.</p>
-          <p class="about-card__text">В Поликлинике работают высококвалифицированные врачи по 16 узким специальностям. Большинство из них имеют ученые степени.</p>
-        </div>
-      </article>
-
-      <!-- Карточка 2 -->
-      <article class="about-card">
-        <div class="about-card__header">
-          <div class="about-card__icon-box">
-            <svg width="30" height="32" viewBox="0 0 30 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9.12501 20.5884V23.5C9.12501 28.1527 12.9098 32 17.5625 32C22.2152 32 26 28.1527 26 23.5V22.4676C28.137 22.0321 29.75 20.1385 29.75 17.875C29.75 15.2904 27.6471 13.1875 25.0625 13.1875C22.478 13.1875 20.375 15.2904 20.375 17.875C20.375 20.1385 21.9881 22.0321 24.125 22.4676V23.5C24.125 27.1182 21.1807 30.125 17.5625 30.125C13.9443 30.125 11 27.1182 11 23.5V20.5896C14.8261 19.8877 19.2417 15.1368 20.0061 10.6176C20.5073 7.64925 19.2688 5.273 16.625 4.08444V2.8125C16.625 1.26163 15.3634 0 13.8125 0C12.2616 0 11 1.26163 11 2.8125C11 4.36337 12.2616 5.625 13.8125 5.625H15.477C17.6341 6.42369 18.5408 8.03569 18.1567 10.3054C17.4984 14.201 13.1112 18.8125 10.0625 18.8125C6.64795 18.8125 1.90208 13.3901 1.87333 9.375C1.86051 7.58531 2.7982 6.30206 4.62289 5.625H6.31251C7.86339 5.625 9.12501 4.36337 9.12501 2.8125C9.12501 1.26163 7.86345 0 6.31251 0C4.76158 0 3.50001 1.26163 3.50001 2.8125V4.074C1.24483 5.08387 -0.00486079 6.97625 1.42093e-05 9.375C0.00957671 14.0759 4.88008 19.802 9.12501 20.5884ZM24.125 16.9375H26V18.8125H24.125V16.9375Z" fill="white"/>
-            </svg>
-          </div>
-          <div class="about-card__title-group">
-            <h3 class="about-card__title">Диагностический центр</h3>
-            <div class="about-card__line"></div>
-          </div>
-        </div>
-        <div class="about-card__content">
-          <ul class="about-card__list">
-            <li class="about-card__list-item">ЭКГ, УЗИ систем и органов</li>
-            <li class="about-card__list-item">Отделение эндоскопии</li>
-            <li class="about-card__list-item">Рентгенологическое отделение</li>
-          </ul>
-        </div>
-      </article>
-
-      <!-- Карточка 3 -->
-      <article class="about-card">
-        <div class="about-card__header">
-          <div class="about-card__icon-box">
-            <svg width="24" height="30" viewBox="0 0 24 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 17.9998C15.3089 17.9998 17.9999 15.3089 17.9999 11.9999C17.9999 8.69092 15.3089 5.99995 12 5.99995C8.69101 5.99995 6.00004 8.69092 6.00004 11.9999C6.00004 15.3089 8.69101 17.9998 12 17.9998ZM12 8.99992C13.6545 8.99992 14.9999 10.3454 14.9999 11.9999C14.9999 13.6544 13.6545 14.9999 12 14.9999C10.3455 14.9999 9.00001 13.6544 9.00001 11.9999C9.00001 10.3454 10.3455 8.99992 12 8.99992ZM11.13 29.7207C11.3839 29.902 11.688 29.9994 12 29.9994C12.312 29.9994 12.6161 29.902 12.87 29.7207C13.326 29.3982 24.0434 21.6598 23.9999 11.9999C23.9999 5.38344 18.6164 0 12 0C5.38357 0 0.000132055 5.38344 0.000132055 11.9924C-0.0433675 21.6598 10.674 29.3982 11.13 29.7207ZM12 2.99997C16.9634 2.99997 20.9999 7.03642 20.9999 12.0074C21.0314 18.6643 14.418 24.6417 12 26.6022C9.58353 24.6402 2.9686 18.6613 3.0001 11.9999C3.0001 7.03642 7.03655 2.99997 12 2.99997Z" fill="white"/>
-            </svg>
-          </div>
-          <div class="about-card__title-group">
-            <h3 class="about-card__title">Стационар и исследования</h3>
-            <div class="about-card__line"></div>
-          </div>
-        </div>
-        <div class="about-card__content">
-          <p class="about-card__text">На базе Поликлиники функционирует отделение дневного стационара (24 койки), где можно пройти лечение без отрыва от производства.</p>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-<section class="discounts" id="discounts">
-  <div class="discounts__container">
-    <h2 class="discounts__title">Льготные категории граждан и скидки</h2>
-
-    <div class="discounts__list">
-      <!-- Аккордеон 1 -->
-      <article class="discounts__item">
-        <button class="discounts__header" type="button" aria-expanded="false">
-          <span class="discounts__item-title">Скидка для членов Ассоциации выпускников НИУ «БелГУ»</span>
-          <svg class="discounts__arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9 6L15 12L9 18" stroke="#0061FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-        <div class="discounts__body">
-          <div class="discounts__content">
-            <p class="discounts__text">Для членов Ассоциации выпускников НИУ «БелГУ» скидка на платные медицинские услуги в размере 10 %, оказываемые в Поликлинике НИУ «БелГУ» (кроме услуг косметолога и мануального терапевта).</p>
-          </div>
-        </div>
-      </article>
-
-      <!-- Аккордеон 2 -->
-      <article class="discounts__item">
-        <button class="discounts__header" type="button" aria-expanded="false">
-          <span class="discounts__item-title">Право на внеочередное обслуживание (согласно законодательству РФ)</span>
-          <svg class="discounts__arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9 6L15 12L9 18" stroke="#0061FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-        <div class="discounts__body">
-          <div class="discounts__content">
-            <p class="discounts__text">В соответствии с законодательством Российской Федерации право на внеочередное обслуживание имеют:</p>
-            <ul class="discounts__text-list">
-              <li>ветераны Великой Отечественной войны (ВОВ);</li>
-              <li>инвалиды ВОВ и инвалиды боевых действий;</li>
-              <li>члены семей погибших (умерших) инвалидов войны, участников ВОВ и ветеранов боевых действий;</li>
-              <li>ветераны боевых действий (в том числе ветеранов боевых действий СВО);</li>
-              <li>ветераны военной службы;</li>
-              <li>военнослужащие, проходившие военную службу в воинских частях, учреждениях, военно-учебных заведениях;</li>
-              <li>лица, работавшие в ВОВ на объектах противовоздушной обороны;</li>
-              <li>лица, проработавшие в тылу в период с 22.06.1941 по 09.05.1945 не менее 6 месяцев;</li>
-              <li>ветераны труда;</li>
-              <li>инвалиды по заболеваниям I – II группы;</li>
-              <li>граждане, подвергшиеся воздействию радиации вследствие катастрофы на Чернобыльской АЭС;</li>
-              <li>граждане, подвергшиеся воздействию радиации вследствие ядерных испытаний;</li>
-              <li>Герои Советского Союза, Герои Российской Федерации, полные кавалеры орденов Славы;</li>
-              <li>Почетные доноры России;</li>
-              <li>иные категории граждан в соответствии с законодательством Российской Федерации.</li>
-            </ul>
-          </div>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-<section class="contacts-info" id="contacts-info">
-  <div class="contacts-info__container">
-    <h2 class="contacts-info__title">Телефоны и режим работы</h2>
-
-    <div class="contacts-info__grid">
-      <!-- Карточка: Телефоны -->
-      <article class="contacts-info__card">
-        <div class="contacts-info__header">
-          <div class="contacts-info__icon-box">
-            <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M17.6545 12.3517C17.5431 12.2402 17.4109 12.1517 17.2653 12.0913C17.1197 12.031 16.9637 11.9999 16.8061 11.9999C16.6485 11.9999 16.4924 12.031 16.3469 12.0913C16.2013 12.1517 16.069 12.2402 15.9577 12.3517L14.0449 14.2645C13.1581 14.0005 11.5033 13.4005 10.4546 12.3517C9.40577 11.3029 8.80577 9.64814 8.54177 8.76135L10.4546 6.84857C10.5661 6.73723 10.6546 6.60498 10.7149 6.45941C10.7753 6.31383 10.8064 6.15778 10.8064 6.00018C10.8064 5.84258 10.7753 5.68653 10.7149 5.54095C10.6546 5.39538 10.5661 5.26313 10.4546 5.15179L5.6546 0.351838C5.54326 0.240304 5.41102 0.151819 5.26544 0.0914472C5.11986 0.031075 4.96381 0 4.80621 0C4.64861 0 4.49256 0.031075 4.34698 0.0914472C4.20141 0.151819 4.06916 0.240304 3.95782 0.351838L0.703453 3.60621C0.247458 4.0622 -0.00934005 4.68859 0.000259851 5.32819C0.0278596 7.03697 0.480256 12.9721 5.15781 17.6497C9.83536 22.3272 15.7705 22.7784 17.4805 22.8072H17.5141C18.1477 22.8072 18.7465 22.5576 19.2001 22.104L22.4544 18.8497C22.566 18.7383 22.6545 18.6061 22.7148 18.4605C22.7752 18.3149 22.8063 18.1589 22.8063 18.0013C22.8063 17.8437 22.7752 17.6876 22.7148 17.542C22.6545 17.3965 22.566 17.2642 22.4544 17.1529L17.6545 12.3517Z" fill="white"/>
-            </svg>
-          </div>
-          <div class="contacts-info__title-group">
-            <h3 class="contacts-info__card-title">Телефоны</h3>
-            <div class="contacts-info__line"></div>
-          </div>
-        </div>
-        <div class="contacts-info__content">
-          <ul class="contacts-info__list">
-            <li class="contacts-info__list-item">т. +7 (4722) 24-56-30 — регистратура (по всем вопросам)</li>
-            <li class="contacts-info__list-item">т. +7 (4722) 30-18-71 — приемная</li>
-            <li class="contacts-info__list-item">т. +7 (4722) 30-18-72 — главный врач — Камышникова Людмила Александровна</li>
-            <li class="contacts-info__list-item">т. +7 (4722) 24-56-34 — главная медицинская сестра — Нарожняя Ольга Григорьевна</li>
-          </ul>
-        </div>
-      </article>
-
-      <!-- Карточка: Режим работы -->
-      <article class="contacts-info__card">
-        <div class="contacts-info__header">
-          <div class="contacts-info__icon-box">
-            <svg width="24" height="30" viewBox="0 0 24 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 17.9998C15.3089 17.9998 17.9999 15.3089 17.9999 11.9999C17.9999 8.69092 15.3089 5.99995 12 5.99995C8.69101 5.99995 6.00004 8.69092 6.00004 11.9999C6.00004 15.3089 8.69101 17.9998 12 17.9998ZM12 8.99992C13.6545 8.99992 14.9999 10.3454 14.9999 11.9999C14.9999 13.6544 13.6545 14.9999 12 14.9999C10.3455 14.9999 9.00001 13.6544 9.00001 11.9999C9.00001 10.3454 10.3455 8.99992 12 8.99992ZM11.13 29.7207C11.3839 29.902 11.688 29.9994 12 29.9994C12.312 29.9994 12.6161 29.902 12.87 29.7207C13.326 29.3982 24.0434 21.6598 23.9999 11.9999C23.9999 5.38344 18.6164 0 12 0C5.38357 0 0.000132055 5.38344 0.000132055 11.9924C-0.0433675 21.6598 10.674 29.3982 11.13 29.7207ZM12 2.99997C16.9634 2.99997 20.9999 7.03642 20.9999 12.0074C21.0314 18.6643 14.418 24.6417 12 26.6022C9.58353 24.6402 2.9686 18.6613 3.0001 11.9999C3.0001 7.03642 7.03655 2.99997 12 2.99997Z" fill="white"/>
-            </svg>
-          </div>
-          <div class="contacts-info__title-group">
-            <h3 class="contacts-info__card-title">Режим работы</h3>
-            <div class="contacts-info__line"></div>
-          </div>
-        </div>
-        <div class="contacts-info__content">
-          <p class="contacts-info__text">Рабочие дни: ПН-ПТ <br> 08:00 - 18:00</p>
-          <p class="contacts-info__text">Выходные дни: СБ, ВС</p>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-<section class="addresses" id="addresses">
-  <div class="addresses__container">
-    <div class="addresses__layout">
-      <div class="addresses__content">
-        <h2 class="addresses__title">Адреса</h2>
-        
-        <div class="addresses__group">
-          <h3 class="addresses__subtitle">Отделение ВОП</h3>
-          <div class="addresses__item">
-            <svg class="addresses__icon" width="20" height="28" viewBox="0 0 20 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M10 0C15.5002 0 20 4.40981 20 9.80006C20 17.15 10 28 10 28C10 28 0 17.15 0 9.80006C0 4.40981 4.49975 0 10 0ZM10 13.3333C11.8664 13.3333 13.3333 11.7197 13.3333 9.66667C13.3333 7.61353 11.8665 6 10 6C8.13355 6 6.66667 7.61353 6.66667 9.66667C6.66667 11.7197 8.1336 13.3333 10 13.3333Z" fill="#0061FF"/>
-            </svg>
-            <p class="addresses__text">ул. Студенческая, д. 14, корпус 8</p>
-          </div>
-          <ul class="addresses__sublist">
-            <li class="addresses__sublist-item">отделение общей (семейной) практики</li>
-            <li class="addresses__sublist-item">отделение физиотерапии</li>
-          </ul>
-        </div>
-
-        <div class="addresses__group">
-          <h3 class="addresses__subtitle">Отделение эндоскопии</h3>
-          <div class="addresses__item">
-            <svg class="addresses__icon" width="20" height="28" viewBox="0 0 20 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" clip-rule="evenodd" d="M10 0C15.5002 0 20 4.40981 20 9.80006C20 17.15 10 28 10 28C10 28 0 17.15 0 9.80006C0 4.40981 4.49975 0 10 0ZM10 13.3333C11.8664 13.3333 13.3333 11.7197 13.3333 9.66667C13.3333 7.61353 11.8665 6 10 6C8.13355 6 6.66667 7.61353 6.66667 9.66667C6.66667 11.7197 8.1336 13.3333 10 13.3333Z" fill="#0061FF"/>
-            </svg>
-            <p class="addresses__text">ул. Студенческая, д.14, общ. №3</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="addresses__map-wrapper">
-        <div class="addresses__map-container">
-          <!-- Обязательно проверьте width=100%25 и height=100%25 в ссылке ниже -->
-          <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A470084467c910c760f156d0ca932ffdb98db029e05fa0ea79cc2ef00aa9ce919&amp;width=100%25&amp;height=100%25&amp;lang=ru_RU&amp;scroll=true"></script>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="review" id="review">
-  <div class="review__container">
-    <h2 class="review__title">Оставить отзыв</h2>
-
-    <div class="review__layout">
-      <div class="review__image-wrapper">
-        <picture>
-          <img class="review__image" src="<%=require('../images/appointment.jpg')%>" alt="Иллюстрация отзыва">
-        </picture>
-      </div>
-
-      <form class="review__form" action="#" method="POST">
-        <div class="review__inputs">
-          <input class="review__input" type="text" name="name" placeholder="Имя" required aria-label="Ваше имя">
-          <input class="review__input" type="text" name="surname" placeholder="Фамилия" required aria-label="Ваша фамилия">
-          <input class="review__input" type="email" name="email" placeholder="Электронная почта" required aria-label="Электронная почта">
-          <input class="review__input" type="tel" name="phone" placeholder="Номер Телефона" required aria-label="Номер телефона">
-          <textarea class="review__textarea" name="comment" placeholder="Сообщение" aria-label="Ваш отзыв"></textarea>
-        </div>
-
-        <div class="review__footer">
-          <label class="review__consent">
-            <input class="review__checkbox" type="checkbox" name="consent" required>
-            <span class="review__checkbox-custom"></span>
-            <span class="review__consent-text">Согласен на обработку персональных данных</span>
-          </label>
-          <button class="review__submit" type="submit">Отправить</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</section>
-        </main>
-                    <footer class="footer">
-                <div class="footer__container">
-                    <div class="footer__nav-grid">
-                        <div class="footer__column">
-                            <h3 class="footer__column-title">Общая информация</h3>
-                            <ul class="footer__list">
-                                <li class="footer__list-item">
-                                    <a href="#" class="footer__link">О нас</a>
-                                </li>
-                                <li class="footer__list-item">
-                                    <a href="#" class="footer__link">Адреса</a>
-                                </li>
-                                <li class="footer__list-item">
-                                    <a href="#" class="footer__link">Режим работы</a>
-                                </li>
-                                <li class="footer__list-item">
-                                    <a href="#" class="footer__link">Новости</a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="footer__column">
-                            <h3 class="footer__column-title">Дополнительная информация</h3>
-                            <ul class="footer__list">
-                                <li class="footer__list-item">
-                                    <a href="#" class="footer__link">Для пациента</a>
-                                </li>
-                                <li class="footer__list-item">
-                                    <a href="#" class="footer__link">Специалисты</a>
-                                </li>
-                                <li class="footer__list-item">
-                                    <a href="#" class="footer__link">Услуги и цены</a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="footer__column">
-                            <h3 class="footer__column-title">Обратная связь</h3>
-                            <ul class="footer__list">
-                                <li class="footer__list-item">
-                                    <a href="#" class="footer__link">Оставить отзыв</a>
-                                </li>
-                                <li class="footer__list-item">
-                                    <a href="#" class="footer__link">Заполнить анкету</a>
-                                </li>
-                                <li class="footer__list-item">
-                                    <a href="#" class="footer__link">Запись на приём</a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="footer__column">
-                            <h3 class="footer__column-title">Контакты</h3>
-                            <div class="footer__contacts">
-                                <div class="footer__contact-item">
+                    <div class="about__grid">
+                        <article class="about-card">
+                            <div class="about-card__header">
+                                <div class="about-card__icon-box">
                                     <svg
-                                        width="23"
-                                        height="23"
-                                        viewBox="0 0 23 23"
-                                        fill="none"
                                         xmlns="http://www.w3.org/2000/svg"
+                                        width="32"
+                                        height="29"
+                                        fill="none"
+                                        viewBox="0 0 32 29"
                                     >
                                         <path
-                                            d="M17.6545 12.3517C17.5431 12.2402 17.4109 12.1517 17.2653 12.0913C17.1197 12.031 16.9637 11.9999 16.8061 11.9999C16.6485 11.9999 16.4924 12.031 16.3469 12.0913C16.2013 12.1517 16.069 12.2402 15.9577 12.3517L14.0449 14.2645C13.1581 14.0005 11.5033 13.4005 10.4546 12.3517C9.40577 11.3029 8.80577 9.64814 8.54177 8.76135L10.4546 6.84857C10.5661 6.73723 10.6546 6.60498 10.7149 6.45941C10.7753 6.31383 10.8064 6.15778 10.8064 6.00018C10.8064 5.84258 10.7753 5.68653 10.7149 5.54095C10.6546 5.39538 10.5661 5.26313 10.4546 5.15179L5.6546 0.351838C5.54326 0.240304 5.41102 0.151819 5.26544 0.0914472C5.11986 0.031075 4.96381 0 4.80621 0C4.64861 0 4.49256 0.031075 4.34698 0.0914472C4.20141 0.151819 4.06916 0.240304 3.95782 0.351838L0.703453 3.60621C0.247458 4.0622 -0.00934005 4.68859 0.000259851 5.32819C0.0278596 7.03697 0.480256 12.9721 5.15781 17.6497C9.83536 22.3272 15.7705 22.7784 17.4805 22.8072H17.5141C18.1477 22.8072 18.7465 22.5576 19.2001 22.104L22.4544 18.8497C22.566 18.7383 22.6545 18.6061 22.7148 18.4605C22.7752 18.3149 22.8063 18.1589 22.8063 18.0013C22.8063 17.8437 22.7752 17.6876 22.7148 17.542C22.6545 17.3965 22.566 17.2642 22.4544 17.1529L17.6545 12.3517ZM17.5021 20.406C16.0045 20.3808 10.8806 19.9788 6.85459 15.9517C2.81543 11.9125 2.42424 6.77057 2.40024 5.30299L4.80621 2.89701L7.90938 6.00018L6.3578 7.55177C6.21675 7.6927 6.11305 7.86657 6.05606 8.05764C5.99908 8.24872 5.9906 8.45098 6.0314 8.64615C6.0602 8.78415 6.76459 12.0565 8.75657 14.0485C10.7486 16.0405 14.0209 16.7449 14.1589 16.7737C14.354 16.8156 14.5564 16.8078 14.7477 16.751C14.9389 16.6942 15.1128 16.5901 15.2533 16.4485L16.8061 14.8969L19.9093 18.0001L17.5021 20.406Z"
-                                            fill="#0061FF"
+                                            fill="#fff"
+                                            d="M15.99 2.656C9.017-3.445.148 1.914.003 9.182c-.037 1.852.497 3.656 1.561 5.319h6.898l1.226-2.045a.937.937 0 0 1 1.595-.021l2.589 4.067 3.772-7.965a.938.938 0 0 1 1.673-.043l3.234 6.007h7.868c5.829-9.11-5.69-19.487-14.427-11.845"
+                                        />
+                                        <path
+                                            fill="#fff"
+                                            d="m21.165 15.882-2.62-4.867-3.707 7.824a.938.938 0 0 1-1.638.102l-2.685-4.22-.72 1.2a.94.94 0 0 1-.804.454H3.046c.187.195-.806-.796 12.284 12.227a.937.937 0 0 0 1.322 0C29.541 15.78 28.749 16.57 28.935 16.375H21.99a.94.94 0 0 1-.825-.493"
                                         />
                                     </svg>
-                                    <a href="tel:+74722245630" class="footer__contact-link"
-                                        >+7 (4722) 24-56-30</a
-                                    >
                                 </div>
-                                <div class="footer__contact-item">
+                                <div class="about-card__title-group">
+                                    <h3 class="about-card__title">Современная диагностика</h3>
+                                    <div class="about-card__line"></div>
+                                </div>
+                            </div>
+                            <div class="about-card__content">
+                                <p class="about-card__text">
+                                    Поликлиника НИУ «БелГУ» – это многопрофильное
+                                    лечебно-профилактическое медицинское учреждение, оказывающее
+                                    амбулаторно-поликлиническую помощь.
+                                </p>
+                                <p class="about-card__text">
+                                    В Поликлинике работают высококвалифицированные врачи по 16 узким
+                                    специальностям. Большинство из них имеют ученые степени.
+                                </p>
+                            </div>
+                        </article>
+                        <article class="about-card">
+                            <div class="about-card__header">
+                                <div class="about-card__icon-box">
                                     <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="30"
+                                        height="32"
+                                        fill="none"
+                                        viewBox="0 0 30 32"
+                                    >
+                                        <path
+                                            fill="#fff"
+                                            d="M9.125 20.588V23.5c0 4.653 3.785 8.5 8.438 8.5C22.215 32 26 28.153 26 23.5v-1.032a4.695 4.695 0 0 0 3.75-4.593 4.693 4.693 0 0 0-4.687-4.687 4.693 4.693 0 0 0-4.688 4.687 4.695 4.695 0 0 0 3.75 4.593V23.5c0 3.618-2.944 6.625-6.562 6.625S11 27.118 11 23.5v-2.91c3.826-.702 8.242-5.453 9.006-9.972.501-2.969-.737-5.345-3.381-6.534V2.813A2.816 2.816 0 0 0 13.813 0 2.816 2.816 0 0 0 11 2.813a2.816 2.816 0 0 0 2.813 2.812h1.664c2.157.799 3.064 2.41 2.68 4.68-.659 3.896-5.046 8.508-8.094 8.508-3.415 0-8.16-5.423-8.19-9.438-.012-1.79.925-3.073 2.75-3.75h1.69a2.816 2.816 0 0 0 2.812-2.812A2.816 2.816 0 0 0 6.313 0 2.816 2.816 0 0 0 3.5 2.813v1.261C1.245 5.084-.005 6.976 0 9.375c.01 4.7 4.88 10.427 9.125 11.213m15-3.65H26v1.875h-1.875z"
+                                        />
+                                    </svg>
+                                </div>
+                                <div class="about-card__title-group">
+                                    <h3 class="about-card__title">Диагностический центр</h3>
+                                    <div class="about-card__line"></div>
+                                </div>
+                            </div>
+                            <div class="about-card__content">
+                                <ul class="about-card__list">
+                                    <li class="about-card__list-item">ЭКГ, УЗИ систем и органов</li>
+                                    <li class="about-card__list-item">Отделение эндоскопии</li>
+                                    <li class="about-card__list-item">
+                                        Рентгенологическое отделение
+                                    </li>
+                                </ul>
+                            </div>
+                        </article>
+                        <article class="about-card">
+                            <div class="about-card__header">
+                                <div class="about-card__icon-box">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
                                         width="24"
                                         height="30"
+                                        fill="none"
                                         viewBox="0 0 24 30"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
                                     >
                                         <path
-                                            d="M12 17.9998C15.3089 17.9998 17.9999 15.3089 17.9999 11.9999C17.9999 8.69092 15.3089 5.99995 12 5.99995C8.69101 5.99995 6.00004 8.69092 6.00004 11.9999C6.00004 15.3089 8.69101 17.9998 12 17.9998ZM12 8.99992C13.6545 8.99992 14.9999 10.3454 14.9999 11.9999C14.9999 13.6544 13.6545 14.9999 12 14.9999C10.3455 14.9999 9.00001 13.6544 9.00001 11.9999C9.00001 10.3454 10.3455 8.99992 12 8.99992ZM11.13 29.7207C11.3839 29.902 11.688 29.9994 12 29.9994C12.312 29.9994 12.6161 29.902 12.87 29.7207C13.326 29.3982 24.0434 21.6598 23.9999 11.9999C23.9999 5.38344 18.6164 0 12 0C5.38357 0 0.000132055 5.38344 0.000132055 11.9924C-0.0433675 21.6598 10.674 29.3982 11.13 29.7207ZM12 2.99997C16.9634 2.99997 20.9999 7.03642 20.9999 12.0074C21.0314 18.6643 14.418 24.6417 12 26.6022C9.58353 24.6402 2.9686 18.6613 3.0001 11.9999C3.0001 7.03642 7.03655 2.99997 12 2.99997Z"
-                                            fill="#0061FF"
+                                            fill="#fff"
+                                            d="M12 18c3.309 0 6-2.691 6-6s-2.691-6-6-6-6 2.69-6 6 2.691 6 6 6m0-9c1.655 0 3 1.345 3 3 0 1.654-1.345 3-3 3s-3-1.346-3-3c0-1.655 1.345-3 3-3m-.87 20.72a1.5 1.5 0 0 0 1.74 0C13.326 29.399 24.043 21.66 24 12c0-6.617-5.384-12-12-12S0 5.383 0 11.992c-.043 9.668 10.674 17.406 11.13 17.729M12 3c4.963 0 9 4.036 9 9.007.031 6.657-6.582 12.635-9 14.595C9.584 24.64 2.969 18.662 3 12c0-4.964 4.037-9 9-9"
                                         />
                                     </svg>
-                                    <span class="footer__contact-text">ул. Студенческая, 14к8</span>
                                 </div>
-                                <div class="footer__contact-item">
+                                <div class="about-card__title-group">
+                                    <h3 class="about-card__title">Стационар и исследования</h3>
+                                    <div class="about-card__line"></div>
+                                </div>
+                            </div>
+                            <div class="about-card__content">
+                                <p class="about-card__text">
+                                    На базе Поликлиники функционирует отделение дневного стационара
+                                    (24 койки), где можно пройти лечение без отрыва от производства.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section class="discounts" id="discounts">
+                <div class="discounts__container">
+                    <h2 class="discounts__title">Льготные категории граждан и скидки</h2>
+
+                    <div class="discounts__list">
+                        <article class="discounts__item">
+                            <button class="discounts__header" type="button" aria-expanded="false">
+                                <span class="discounts__item-title"
+                                    >Скидка для членов Ассоциации выпускников НИУ «БелГУ»</span
+                                >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    fill="none"
+                                    class="discounts__arrow"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke="#0061ff"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="3"
+                                        d="m9 6 6 6-6 6"
+                                    />
+                                </svg>
+                            </button>
+                            <div class="discounts__body">
+                                <div class="discounts__content">
+                                    <p class="discounts__text">
+                                        Для членов Ассоциации выпускников НИУ «БелГУ» скидка на
+                                        платные медицинские услуги в размере 10 %, оказываемые в
+                                        Поликлинике НИУ «БелГУ» (кроме услуг косметолога и
+                                        мануального терапевта).
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="discounts__item">
+                            <button class="discounts__header" type="button" aria-expanded="false">
+                                <span class="discounts__item-title"
+                                    >Право на внеочередное обслуживание (согласно законодательству
+                                    РФ)</span
+                                >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    fill="none"
+                                    class="discounts__arrow"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke="#0061ff"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="3"
+                                        d="m9 6 6 6-6 6"
+                                    />
+                                </svg>
+                            </button>
+                            <div class="discounts__body">
+                                <div class="discounts__content">
+                                    <p class="discounts__text">
+                                        В соответствии с законодательством Российской Федерации
+                                        право на внеочередное обслуживание имеют:
+                                    </p>
+                                    <ul class="discounts__text-list">
+                                        <li>ветераны Великой Отечественной войны (ВОВ);</li>
+                                        <li>инвалиды ВОВ и инвалиды боевых действий;</li>
+                                        <li>
+                                            члены семей погибших (умерших) инвалидов войны,
+                                            участников ВОВ и ветеранов боевых действий;
+                                        </li>
+                                        <li>
+                                            ветераны боевых действий (в том числе ветеранов боевых
+                                            действий СВО);
+                                        </li>
+                                        <li>ветераны военной службы;</li>
+                                        <li>
+                                            военнослужащие, проходившие военную службу в воинских
+                                            частях, учреждениях, военно-учебных заведениях;
+                                        </li>
+                                        <li>
+                                            лица, работавшие в ВОВ на объектах противовоздушной
+                                            обороны;
+                                        </li>
+                                        <li>
+                                            лица, проработавшие в тылу в период с 22.06.1941 по
+                                            09.05.1945 не менее 6 месяцев;
+                                        </li>
+                                        <li>ветераны труда;</li>
+                                        <li>инвалиды по заболеваниям I – II группы;</li>
+                                        <li>
+                                            граждане, подвергшиеся воздействию радиации вследствие
+                                            катастрофы на Чернобыльской АЭС;
+                                        </li>
+                                        <li>
+                                            граждане, подвергшиеся воздействию радиации вследствие
+                                            ядерных испытаний;
+                                        </li>
+                                        <li>
+                                            Герои Советского Союза, Герои Российской Федерации,
+                                            полные кавалеры орденов Славы;
+                                        </li>
+                                        <li>Почетные доноры России;</li>
+                                        <li>
+                                            иные категории граждан в соответствии с
+                                            законодательством Российской Федерации.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section class="contacts-info" id="contacts-info">
+                <div class="contacts-info__container">
+                    <h2 class="contacts-info__title">Телефоны и режим работы</h2>
+
+                    <div class="contacts-info__grid">
+                        <article class="contacts-info__card">
+                            <div class="contacts-info__header">
+                                <div class="contacts-info__icon-box">
                                     <svg
-                                        width="24"
-                                        height="20"
-                                        viewBox="0 0 24 20"
-                                        fill="none"
                                         xmlns="http://www.w3.org/2000/svg"
+                                        width="23"
+                                        height="23"
+                                        fill="none"
+                                        viewBox="0 0 23 23"
                                     >
                                         <path
-                                            fill-rule="evenodd"
-                                            clip-rule="evenodd"
-                                            d="M-0.91875 2.59167C-0.75492 1.8554 -0.352185 1.19802 0.223498 0.727181C0.79918 0.25634 1.51369 -5.08241e-05 2.25 7.5569e-09H21.75C22.4863 -5.08241e-05 23.2008 0.25634 23.7765 0.727181C24.3522 1.19802 24.7549 1.8554 24.9187 2.59167L12 10.69L-0.91875 2.59167ZM-1 4.495V16.335L8.42988 10.405L-1 4.495ZM9.98663 11.3833L-0.689625 18.095C-0.425844 18.6655 -0.00951922 19.1474 0.510895 19.4846C1.03131 19.8219 1.63441 20.0006 2.25 20H21.75C22.3655 20.0001 22.9684 19.821 23.4885 19.4835C24.0086 19.1459 24.4246 18.6639 24.688 18.0933L14.0118 11.3817L12 12.6433L9.98663 11.3817V11.3833ZM15.5701 10.4067L25 16.335V4.495L15.5701 10.405V10.4067Z"
-                                            fill="#0061FF"
+                                            fill="#fff"
+                                            d="M17.655 12.352a1.2 1.2 0 0 0-1.697 0l-1.913 1.912c-.887-.263-2.542-.864-3.59-1.912-1.05-1.05-1.65-2.704-1.913-3.59l1.913-1.913a1.2 1.2 0 0 0 0-1.697l-4.8-4.8a1.2 1.2 0 0 0-1.697 0L.703 3.606A2.4 2.4 0 0 0 0 5.328c.028 1.709.48 7.644 5.158 12.322 4.677 4.677 10.613 5.128 12.322 5.157h.034c.634 0 1.233-.25 1.686-.703l3.254-3.254a1.197 1.197 0 0 0 0-1.697z"
                                         />
                                     </svg>
-                                    <a href="mailto:msu.bsuedu@mail.ru" class="footer__contact-link"
-                                        >msu.bsuedu@mail.ru</a
+                                </div>
+                                <div class="contacts-info__title-group">
+                                    <h3 class="contacts-info__card-title">Телефоны</h3>
+                                    <div class="contacts-info__line"></div>
+                                </div>
+                            </div>
+                            <div class="contacts-info__content">
+                                <ul class="contacts-info__list">
+                                    <li class="contacts-info__list-item">
+                                        т. +7 (4722) 24-56-30 — регистратура (по всем вопросам)
+                                    </li>
+                                    <li class="contacts-info__list-item">
+                                        т. +7 (4722) 30-18-71 — приемная
+                                    </li>
+                                    <li class="contacts-info__list-item">
+                                        т. +7 (4722) 30-18-72 — главный врач — Камышникова Людмила
+                                        Александровна
+                                    </li>
+                                    <li class="contacts-info__list-item">
+                                        т. +7 (4722) 24-56-34 — главная медицинская сестра —
+                                        Нарожняя Ольга Григорьевна
+                                    </li>
+                                </ul>
+                            </div>
+                        </article>
+                        <article class="contacts-info__card">
+                            <div class="contacts-info__header">
+                                <div class="contacts-info__icon-box">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="30"
+                                        fill="none"
+                                        viewBox="0 0 24 30"
                                     >
+                                        <path
+                                            fill="#fff"
+                                            d="M12 18c3.309 0 6-2.691 6-6s-2.691-6-6-6-6 2.69-6 6 2.691 6 6 6m0-9c1.655 0 3 1.345 3 3 0 1.654-1.345 3-3 3s-3-1.346-3-3c0-1.655 1.345-3 3-3m-.87 20.72a1.5 1.5 0 0 0 1.74 0C13.326 29.399 24.043 21.66 24 12c0-6.617-5.384-12-12-12S0 5.383 0 11.992c-.043 9.668 10.674 17.406 11.13 17.729M12 3c4.963 0 9 4.036 9 9.007.031 6.657-6.582 12.635-9 14.595C9.584 24.64 2.969 18.662 3 12c0-4.964 4.037-9 9-9"
+                                        />
+                                    </svg>
+                                </div>
+                                <div class="contacts-info__title-group">
+                                    <h3 class="contacts-info__card-title">Режим работы</h3>
+                                    <div class="contacts-info__line"></div>
+                                </div>
+                            </div>
+                            <div class="contacts-info__content">
+                                <p class="contacts-info__text">
+                                    Рабочие дни: ПН-ПТ <br />
+                                    08:00 - 18:00
+                                </p>
+                                <p class="contacts-info__text">Выходные дни: СБ, ВС</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section class="addresses" id="addresses">
+                <div class="addresses__container">
+                    <div class="addresses__layout">
+                        <div class="addresses__content">
+                            <h2 class="addresses__title">Адреса</h2>
+
+                            <div class="addresses__group">
+                                <h3 class="addresses__subtitle">Отделение ВОП</h3>
+                                <div class="addresses__item">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="20"
+                                        height="28"
+                                        fill="none"
+                                        class="addresses__icon"
+                                        viewBox="0 0 20 28"
+                                    >
+                                        <path
+                                            fill="#0061ff"
+                                            fill-rule="evenodd"
+                                            d="M10 0c5.5 0 10 4.41 10 9.8C20 17.15 10 28 10 28S0 17.15 0 9.8C0 4.41 4.5 0 10 0m0 13.333c1.866 0 3.333-1.613 3.333-3.666S11.867 6 10 6C8.134 6 6.667 7.614 6.667 9.667S8.134 13.333 10 13.333"
+                                            clip-rule="evenodd"
+                                        />
+                                    </svg>
+                                    <p class="addresses__text">ул. Студенческая, д. 14, корпус 8</p>
+                                </div>
+                                <ul class="addresses__sublist">
+                                    <li class="addresses__sublist-item">
+                                        отделение общей (семейной) практики
+                                    </li>
+                                    <li class="addresses__sublist-item">отделение физиотерапии</li>
+                                </ul>
+                            </div>
+
+                            <div class="addresses__group">
+                                <h3 class="addresses__subtitle">Отделение эндоскопии</h3>
+                                <div class="addresses__item">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="20"
+                                        height="28"
+                                        fill="none"
+                                        class="addresses__icon"
+                                        viewBox="0 0 20 28"
+                                    >
+                                        <path
+                                            fill="#0061ff"
+                                            fill-rule="evenodd"
+                                            d="M10 0c5.5 0 10 4.41 10 9.8C20 17.15 10 28 10 28S0 17.15 0 9.8C0 4.41 4.5 0 10 0m0 13.333c1.866 0 3.333-1.613 3.333-3.666S11.867 6 10 6C8.134 6 6.667 7.614 6.667 9.667S8.134 13.333 10 13.333"
+                                            clip-rule="evenodd"
+                                        />
+                                    </svg>
+                                    <p class="addresses__text">ул. Студенческая, д.14, общ. №3</p>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="footer__bottom">
-                        <p class="footer__copy">
-                            Сделано с любовью к пациентам | Поликлиника БелГУ | Наши соц-сети:
-                        </p>
-                        <div class="footer__socials">
-                            <a href="#" class="footer__social-link" aria-label="Телеграм">
-                                <svg
-                                    width="30"
-                                    height="30"
-                                    viewBox="0 0 30 30"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0C6.71573 0 0 6.71573 0 15C0 23.2843 6.71573 30 15 30Z"
-                                        fill="url(#paint0_linear_28_1300)"
-                                    />
-                                    <path
-                                        d="M12.25 21.875C11.7641 21.875 11.8466 21.6915 11.679 21.2288L10.25 16.5257L21.25 10"
-                                        fill="#C8DAEA"
-                                    />
-                                    <path
-                                        d="M12.25 21.8749C12.625 21.8749 12.7907 21.7034 13 21.4999L15 19.5552L12.5052 18.0508"
-                                        fill="#A9C9DD"
-                                    />
-                                    <path
-                                        d="M12.5049 18.0512L18.5499 22.5173C19.2397 22.8979 19.7376 22.7009 19.9094 21.8769L22.37 10.2815C22.6219 9.27147 21.985 8.81337 21.3251 9.11297L6.87635 14.6843C5.89009 15.0799 5.89584 15.6302 6.69658 15.8753L10.4045 17.0326L18.9886 11.617C19.3938 11.3713 19.7657 11.5034 19.4605 11.7743"
-                                        fill="url(#paint1_linear_28_1300)"
-                                    />
-                                    <defs>
-                                        <linearGradient
-                                            id="paint0_linear_28_1300"
-                                            x1="11.2515"
-                                            y1="1.251"
-                                            x2="3.7515"
-                                            y2="18.75"
-                                            gradientUnits="userSpaceOnUse"
-                                        >
-                                            <stop stop-color="#37AEE2" />
-                                            <stop offset="1" stop-color="#1E96C8" />
-                                        </linearGradient>
-                                        <linearGradient
-                                            id="paint1_linear_28_1300"
-                                            x1="13.1222"
-                                            y1="15.9213"
-                                            x2="14.7249"
-                                            y2="21.1057"
-                                            gradientUnits="userSpaceOnUse"
-                                        >
-                                            <stop stop-color="#EFF7FC" />
-                                            <stop offset="1" stop-color="white" />
-                                        </linearGradient>
-                                    </defs>
-                                </svg>
-                            </a>
-                            <a href="#" class="footer__social-link" aria-label="Вконтакте">
-                                <svg
-                                    width="30"
-                                    height="30"
-                                    viewBox="0 0 30 30"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M0 15C0 6.71573 6.71573 0 15 0C23.2843 0 30 6.71573 30 15C30 23.2843 23.2843 30 15 30C6.71573 30 0 23.2843 0 15Z"
-                                        fill="#4C6C91"
-                                    />
-                                    <path
-                                        d="M15.7847 19.9226C15.7847 19.9226 16.0734 19.8911 16.2213 19.7351C16.3567 19.5922 16.352 19.3226 16.352 19.3226C16.352 19.3226 16.334 18.0636 16.9296 17.8777C17.5165 17.6949 18.2701 19.0952 19.0699 19.6337C19.674 20.0408 20.1326 19.9517 20.1326 19.9517L22.2697 19.9226C22.2697 19.9226 23.3872 19.855 22.8574 18.9923C22.8136 18.9216 22.5483 18.354 21.2688 17.1879C19.9283 15.9673 20.1083 16.1647 21.722 14.053C22.7048 12.7672 23.0977 11.9821 22.9748 11.6464C22.8582 11.3253 22.1351 11.4106 22.1351 11.4106L19.7296 11.4252C19.7296 11.4252 19.5511 11.4014 19.4189 11.4789C19.2898 11.555 19.206 11.7324 19.206 11.7324C19.206 11.7324 18.8257 12.7272 18.3178 13.5737C17.2465 15.3589 16.8184 15.4534 16.6431 15.3428C16.2354 15.0839 16.3372 14.3042 16.3372 13.7504C16.3372 12.0197 16.6048 11.2984 15.8167 11.1118C15.5554 11.0495 15.3629 11.0088 14.6938 11.0019C13.8353 10.9935 13.1091 11.005 12.6975 11.2024C12.4236 11.3338 12.2123 11.6272 12.3414 11.6441C12.5003 11.6648 12.8602 11.7394 13.0512 11.9944C13.2977 12.3239 13.2891 13.0629 13.2891 13.0629C13.2891 13.0629 13.4307 15.1 12.9581 15.3528C12.6341 15.5264 12.1896 15.1723 11.2341 13.5522C10.745 12.7226 10.3756 11.8054 10.3756 11.8054C10.3756 11.8054 10.3044 11.6341 10.1768 11.5419C10.0227 11.4306 9.80747 11.396 9.80747 11.396L7.52161 11.4106C7.52161 11.4106 7.17806 11.4198 7.05207 11.5665C6.94016 11.6963 7.04346 11.966 7.04346 11.966C7.04346 11.966 8.83318 16.0764 10.86 18.1481C12.7186 20.047 14.8284 19.9226 14.8284 19.9226H15.7847Z"
-                                        fill="white"
-                                    />
-                                </svg>
-                            </a>
+                        <div class="addresses__map-wrapper">
+                            <div class="addresses__map-container">
+                                <script
+                                    type="text/javascript"
+                                    charset="utf-8"
+                                    async
+                                    src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A470084467c910c760f156d0ca932ffdb98db029e05fa0ea79cc2ef00aa9ce919&amp;width=100%25&amp;height=100%25&amp;lang=ru_RU&amp;scroll=true"
+                                ></script>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </footer>
+            </section>
+            <section class="review" id="review">
+                <div class="review__container">
+                    <h2 class="review__title">Оставить отзыв</h2>
+
+                    <div class="review__layout">
+                        <div class="review__image-wrapper">
+                            <picture>
+                                <source
+                                    media="(min-width: 1024px)"
+                                    type="image/webp"
+                                    srcset="<%=require('../images/appointment_desktop.webp')%>"
+                                />
+                                <source
+                                    media="(min-width: 1024px)"
+                                    srcset="<%=require('../images/appointment_desktop.jpg')%>"
+                                />
+                                <source
+                                    type="image/webp"
+                                    srcset="<%=require('../images/appointment_mobile.webp')%>"
+                                />
+                                <img
+                                    class="review__image"
+                                    src="<%=require('../images/appointment_mobile.png')%>"
+                                    alt="Иллюстрация отзыва"
+                                    loading="lazy"
+                                />
+                            </picture>
+                        </div>
+
+                        <form class="review__form" action="#" method="POST">
+                            <div class="review__inputs">
+                                <input
+                                    class="review__input"
+                                    type="text"
+                                    name="name"
+                                    placeholder="Имя"
+                                    required
+                                    aria-label="Ваше имя"
+                                />
+                                <input
+                                    class="review__input"
+                                    type="text"
+                                    name="surname"
+                                    placeholder="Фамилия"
+                                    required
+                                    aria-label="Ваша фамилия"
+                                />
+                                <input
+                                    class="review__input"
+                                    type="email"
+                                    name="email"
+                                    placeholder="Электронная почта"
+                                    required
+                                    aria-label="Электронная почта"
+                                />
+                                <input
+                                    class="review__input"
+                                    type="tel"
+                                    name="phone"
+                                    placeholder="Номер Телефона"
+                                    required
+                                    aria-label="Номер телефона"
+                                />
+                                <textarea
+                                    class="review__textarea"
+                                    name="comment"
+                                    placeholder="Сообщение"
+                                    aria-label="Ваш отзыв"
+                                ></textarea>
+                            </div>
+
+                            <div class="review__footer">
+                                <label class="review__consent">
+                                    <input
+                                        class="review__checkbox"
+                                        type="checkbox"
+                                        name="consent"
+                                        required
+                                    />
+                                    <span class="review__checkbox-custom"></span>
+                                    <span class="review__consent-text"
+                                        >Согласен на обработку персональных данных</span
+                                    >
+                                </label>
+                                <button class="review__submit" type="submit">Отправить</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="footer__container">
+                <div class="footer__nav-grid">
+                    <div class="footer__column">
+                        <h3 class="footer__column-title">Общая информация</h3>
+                        <ul class="footer__list">
+                            <li class="footer__list-item">
+                                <a href="/pages/about.html" class="footer__link">О нас</a>
+                            </li>
+                            <li class="footer__list-item">
+                                <a href="/pages/about.html#addresses" class="footer__link">Адреса</a>
+                            </li>
+                            <li class="footer__list-item">
+                                <a href="/pages/about.html#contacts-info" class="footer__link">Режим работы</a>
+                            </li>
+                            <li class="footer__list-item">
+                                <a href="/pages/news.html" class="footer__link">Новости</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__column">
+                        <h3 class="footer__column-title">Дополнительная информация</h3>
+                        <ul class="footer__list">
+                            <li class="footer__list-item">
+                                <a href="/pages/patients.html" class="footer__link">Для пациента</a>
+                            </li>
+                            <li class="footer__list-item">
+                                <a href="/pages/specialists.html" class="footer__link">Специалисты</a>
+                            </li>
+                            <li class="footer__list-item">
+                                <a href="/pages/services.html" class="footer__link">Услуги и цены</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__column">
+                        <h3 class="footer__column-title">Обратная связь</h3>
+                        <ul class="footer__list">
+                            <li class="footer__list-item">
+                                <a href="/pages/about.html#review" class="footer__link">Оставить отзыв</a>
+                            </li>
+                            <li class="footer__list-item">
+                                <a href="https://anketa.minzdrav.gov.ru/ambulator/5" class="footer__link">Заполнить анкету</a>
+                            </li>
+                            <li class="footer__list-item">
+                                <a href="/pages/services.html#appointment" class="footer__link">Запись на приём</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__column">
+                        <h3 class="footer__column-title">Контакты</h3>
+                        <div class="footer__contacts">
+                            <div class="footer__contact-item">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="23"
+                                    height="23"
+                                    fill="none"
+                                    viewBox="0 0 23 23"
+                                >
+                                    <path
+                                        fill="#0061ff"
+                                        d="M17.655 12.352a1.2 1.2 0 0 0-1.697 0l-1.913 1.912c-.887-.263-2.542-.864-3.59-1.912-1.05-1.05-1.65-2.704-1.913-3.59l1.913-1.913a1.2 1.2 0 0 0 0-1.697l-4.8-4.8a1.2 1.2 0 0 0-1.697 0L.703 3.606A2.4 2.4 0 0 0 0 5.328c.028 1.709.48 7.644 5.158 12.322 4.677 4.677 10.613 5.128 12.322 5.157h.034c.634 0 1.233-.25 1.686-.703l3.254-3.254a1.197 1.197 0 0 0 0-1.697zm-.153 8.054c-1.497-.025-6.621-.427-10.647-4.454-4.04-4.04-4.43-9.181-4.455-10.649l2.406-2.406L7.91 6 6.358 7.552a1.2 1.2 0 0 0-.327 1.094c.03.138.734 3.41 2.726 5.403s5.264 2.696 5.402 2.725a1.19 1.19 0 0 0 1.094-.326l1.553-1.551L19.91 18z"
+                                    />
+                                </svg>
+                                <a href="tel:+74722245630" class="footer__contact-link"
+                                    >+7 (4722) 24-56-30</a
+                                >
+                            </div>
+                            <div class="footer__contact-item">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="30"
+                                    fill="none"
+                                    viewBox="0 0 24 30"
+                                >
+                                    <path
+                                        fill="#0061ff"
+                                        d="M12 18c3.309 0 6-2.691 6-6s-2.691-6-6-6-6 2.69-6 6 2.691 6 6 6m0-9c1.655 0 3 1.345 3 3 0 1.654-1.345 3-3 3s-3-1.346-3-3c0-1.655 1.345-3 3-3m-.87 20.72a1.5 1.5 0 0 0 1.74 0C13.326 29.399 24.043 21.66 24 12c0-6.617-5.384-12-12-12S0 5.383 0 11.992c-.043 9.668 10.674 17.406 11.13 17.729M12 3c4.963 0 9 4.036 9 9.007.031 6.657-6.582 12.635-9 14.595C9.584 24.64 2.969 18.662 3 12c0-4.964 4.037-9 9-9"
+                                    />
+                                </svg>
+                                <span class="footer__contact-text">ул. Студенческая, 14к8</span>
+                            </div>
+                            <div class="footer__contact-item">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="20"
+                                    fill="none"
+                                    viewBox="0 0 24 20"
+                                >
+                                    <path
+                                        fill="#0061ff"
+                                        fill-rule="evenodd"
+                                        d="M-.919 2.592A3.35 3.35 0 0 1 .223.727 3.2 3.2 0 0 1 2.25 0h19.5a3.2 3.2 0 0 1 2.026.727c.576.471.979 1.128 1.143 1.865L12 10.69zM-1 4.495v11.84l9.43-5.93zm10.987 6.888L-.69 18.095c.264.57.68 1.052 1.2 1.39A3.2 3.2 0 0 0 2.25 20h19.5c.616 0 1.218-.179 1.738-.517.52-.337.937-.82 1.2-1.39l-10.676-6.711L12 12.643l-2.013-1.261zm5.583-.976L25 16.335V4.495l-9.43 5.91z"
+                                        clip-rule="evenodd"
+                                    />
+                                </svg>
+                                <a href="mailto:msu.bsuedu@mail.ru" class="footer__contact-link"
+                                    >msu.bsuedu@mail.ru</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer__bottom">
+                    <p class="footer__copy">
+                        Сделано с любовью к пациентам | Поликлиника БелГУ | Наши соц-сети:
+                    </p>
+                    <div class="footer__socials">
+                        <a href="https://t.me/belsupolyclinic" target="_blank" class="footer__social-link" aria-label="Телеграм">
+                            <svg
+                                width="30"
+                                height="30"
+                                viewBox="0 0 30 30"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 0 15 0C6.71573 0 0 6.71573 0 15C0 23.2843 6.71573 30 15 30Z"
+                                    fill="url(#paint0_linear_28_1300)"
+                                />
+                                <path
+                                    d="M12.25 21.875C11.7641 21.875 11.8466 21.6915 11.679 21.2288L10.25 16.5257L21.25 10"
+                                    fill="#C8DAEA"
+                                />
+                                <path
+                                    d="M12.25 21.8749C12.625 21.8749 12.7907 21.7034 13 21.4999L15 19.5552L12.5052 18.0508"
+                                    fill="#A9C9DD"
+                                />
+                                <path
+                                    d="M12.5049 18.0512L18.5499 22.5173C19.2397 22.8979 19.7376 22.7009 19.9094 21.8769L22.37 10.2815C22.6219 9.27147 21.985 8.81337 21.3251 9.11297L6.87635 14.6843C5.89009 15.0799 5.89584 15.6302 6.69658 15.8753L10.4045 17.0326L18.9886 11.617C19.3938 11.3713 19.7657 11.5034 19.4605 11.7743"
+                                    fill="url(#paint1_linear_28_1300)"
+                                />
+                                <defs>
+                                    <linearGradient
+                                        id="paint0_linear_28_1300"
+                                        x1="11.2515"
+                                        y1="1.251"
+                                        x2="3.7515"
+                                        y2="18.75"
+                                        gradientUnits="userSpaceOnUse"
+                                    >
+                                        <stop stop-color="#37AEE2" />
+                                        <stop offset="1" stop-color="#1E96C8" />
+                                    </linearGradient>
+                                    <linearGradient
+                                        id="paint1_linear_28_1300"
+                                        x1="13.1222"
+                                        y1="15.9213"
+                                        x2="14.7249"
+                                        y2="21.1057"
+                                        gradientUnits="userSpaceOnUse"
+                                    >
+                                        <stop stop-color="#EFF7FC" />
+                                        <stop offset="1" stop-color="white" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </a>
+                        <a href="https://vk.com/poliklinika_bsu" target="_blank" class="footer__social-link" aria-label="Вконтакте">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="30"
+                                height="30"
+                                fill="none"
+                                viewBox="0 0 30 30"
+                            >
+                                <path
+                                    fill="#4c6c91"
+                                    d="M0 15C0 6.716 6.716 0 15 0s15 6.716 15 15-6.716 15-15 15S0 23.284 0 15"
+                                />
+                                <path
+                                    fill="#fff"
+                                    d="M15.785 19.923s.288-.032.436-.188c.136-.143.131-.412.131-.412s-.018-1.26.578-1.445c.587-.183 1.34 1.217 2.14 1.756.604.407 1.063.318 1.063.318l2.137-.03s1.117-.067.587-.93c-.043-.07-.309-.638-1.588-1.804-1.34-1.22-1.16-1.023.453-3.135.983-1.286 1.376-2.07 1.253-2.407-.117-.32-.84-.235-.84-.235l-2.405.014s-.179-.024-.311.054c-.13.076-.213.253-.213.253s-.38.995-.888 1.842c-1.072 1.785-1.5 1.88-1.675 1.769-.408-.26-.306-1.039-.306-1.593 0-1.73.268-2.452-.52-2.638-.262-.062-.454-.103-1.123-.11-.859-.009-1.585.003-1.997.2-.273.132-.485.425-.356.442.16.02.52.095.71.35.247.33.238 1.069.238 1.069s.142 2.037-.33 2.29c-.325.173-.77-.18-1.725-1.8-.489-.83-.858-1.748-.858-1.748s-.072-.17-.2-.263c-.153-.111-.369-.146-.369-.146l-2.285.015s-.344.009-.47.155c-.112.13-.009.4-.009.4s1.79 4.11 3.817 6.182c1.859 1.899 3.968 1.775 3.968 1.775z"
+                                />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <button class="scroll-top" type="button" aria-label="Вернуться наверх" id="scroll-to-top">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="34"
+                height="34"
+                fill="none"
+                viewBox="0 0 34 34"
+            >
+                <circle cx="17" cy="17" r="16.5" stroke="#0061ff" />
+                <path
+                    stroke="#0061ff"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m12 20 5-5 5 5"
+                />
+            </svg>
+        </button>
     </body>
 </html>

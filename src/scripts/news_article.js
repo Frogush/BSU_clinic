@@ -1,11 +1,21 @@
 import "../styles/news_article.css"
 
-import { newsData } from '../components/news_data.js';
+import { getUpdatedNewsData, incrementNewsView } from '../components/news_service.js';
+import { initSidebar } from "../components/sidebar.js";
+import { initScrollTop } from "../components/scroll-top.js";
+
+initSidebar();
+initScrollTop();
 
 function initArticle() {
   const params = new URLSearchParams(window.location.search);
   const id = parseInt(params.get('id'));
   
+  // 1. Сначала увеличиваем счетчик в памяти
+  const updatedCount = incrementNewsView(id);
+  
+  // 2. Получаем обновленные данные
+  const newsData = getUpdatedNewsData();
   const article = newsData.find(item => item.id === id);
   
   if (!article) {
@@ -15,6 +25,8 @@ function initArticle() {
 
   document.querySelector('.news-article__title').textContent = article.title;
   document.querySelector('.news-article__date').textContent = article.date;
+  
+  // Выводим обновленное количество (из LocalStorage)
   document.querySelector('.news-article__views-count').textContent = `${article.views} просмотров`;
   document.querySelector('.news-article__image').src = article.image;
   

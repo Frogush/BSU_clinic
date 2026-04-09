@@ -3,7 +3,6 @@
 }
 
 .specialist-detailed {
-    /* Пункт 1: Минимум 400px на мобилке */
     min-height: 400px;
     padding: 20px 0;
     background-color: #f0f5ff;
@@ -23,16 +22,14 @@
     font-weight: 700;
 }
 
-/* --- ДЕТАЛЬНАЯ КАРТОЧКА --- */
 .detailed-card {
     position: relative;
     padding: 15px;
     border-radius: 20px;
     background: #fff;
-    box-shadow: 0 4px 30px #0000001a;
+    box-shadow: 0 13px 19px 0 #00000040;
 }
 
-/* Стрелки */
 .detailed-card__arrow {
     position: absolute;
     z-index: 10;
@@ -45,17 +42,30 @@
     padding: 0;
     border: none;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255 / 0.9);
+    box-shadow: 0 6px 8px 0 #00000040;
     cursor: pointer;
-    /* Для плавного ховера */
-    transition: all 0.3s ease;
+    transition:
+        background-color 0.3s ease,
+        transform 0.2s ease,
+        box-shadow 0.3s ease,
+        outline 0.2s ease;
 }
 
-/* Пункт 2: Ховер эффект для стрелок */
 .detailed-card__arrow:hover {
-    background: #0061ff;
+    background-color: #0061ff;
+    box-shadow: 0 4px 12px 0 #00000040;
     transform: scale(1.1);
+}
+
+.detailed-card__arrow:focus-visible {
+    outline: 2px solid #0061ff;
+    outline-offset: 4px;
+}
+
+.detailed-card__arrow:active {
+    background-color: #004ecc;
+    transform: scale(0.9);
 }
 
 .detailed-card__arrow svg {
@@ -79,7 +89,6 @@
     right: 25px;
 }
 
-/* Фото на МОБИЛКЕ */
 .detailed-card__image-box {
     overflow: hidden;
     width: 100%;
@@ -138,10 +147,13 @@
     display: block;
     width: 100%;
     padding: 12px;
-    border-radius: 8px;
+    border-radius: 5px;
     color: #fff;
     background: #0061ff;
-    transition: opacity 0.3s ease;
+    transition:
+        background-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.1s ease;
     text-align: center;
     font-size: 14px;
     font-weight: 700;
@@ -149,7 +161,18 @@
 }
 
 .detailed-card__btn:hover {
-    opacity: 0.9;
+    background-color: #004ecc;
+    box-shadow: 0 4px 15px #0061ff4d;
+}
+
+.detailed-card__btn:focus-visible {
+    outline: 2px solid #003bb3;
+    outline-offset: 2px;
+}
+
+.detailed-card__btn:active {
+    background-color: #003bb3;
+    transform: scale(0.97);
 }
 
 .detailed-card__divider,
@@ -157,13 +180,11 @@
     display: none;
 }
 
-/* --- ПЛАНШЕТНАЯ ВЕРСИЯ (768px - 1439px) --- */
 @media screen and (min-width: 768px) {
     .specialists-page__title {
         max-width: 1000px;
         margin: 0 auto;
         margin-bottom: 30px;
-        font-size: 40px;
     }
 
     .specialist-detailed__container {
@@ -202,13 +223,19 @@
         transform: translateY(-50%) scale(1.1);
     }
 
+    .detailed-card__arrow:active {
+        transform: translateY(-50%) scale(0.9);
+    }
+
     .detailed-card__arrow svg {
         width: 30px;
         height: 30px;
     }
+
     .detailed-card__arrow_prev {
         left: -65px;
     }
+
     .detailed-card__arrow_next {
         right: -65px;
     }
@@ -220,9 +247,9 @@
     }
 
     .detailed-card__btn {
+        align-self: flex-end;
         width: auto;
         padding: 12px 30px;
-        border-radius: 50px;
         white-space: nowrap;
     }
 
@@ -245,6 +272,7 @@
         margin-bottom: 10px;
         font-weight: 700;
     }
+
     .detailed-card__edu-list {
         padding-left: 20px;
         color: #6d7278;
@@ -252,8 +280,11 @@
     }
 }
 
-/* --- ДЕСТКОП ВЕРСИЯ (1440px+) --- */
 @media screen and (min-width: 1440px) {
+    .specialists-page__title {
+        font-size: 36px;
+    }
+
     .detailed-card__counter {
         margin-bottom: 15px;
         font-size: 14px;
@@ -329,42 +360,69 @@
     padding: 40px 10px;
     margin: 0 auto;
 }
+
 .specialists-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
 }
+
 .grid-card {
     overflow: hidden;
     width: 300px;
     border: 2px solid transparent;
     border-radius: 15px;
     background: #fff;
-    box-shadow: 0 4px 20px #0000000d;
+    box-shadow: 0 13px 19px 0 #00000040;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease,
+        filter 0.2s ease,
+        outline 0.2s ease;
 }
+
+.grid-card:hover {
+    box-shadow: 0 8px 25px 0 #00000040;
+    transform: translateY(-5px);
+}
+
+.grid-card:focus-visible {
+    outline: 2px solid #0061ff;
+    outline-offset: 6px;
+}
+
+.grid-card:active {
+    transform: translateY(-2px) scale(0.99);
+    filter: brightness(0.95);
+}
+
 .grid-card_active {
     border-color: #0061ff;
     box-shadow: 0 4px 30px #0061ff33;
     transform: scale(1.02);
 }
+
 .grid-card__img {
     width: 100%;
     height: 300px;
     background: #ebf3ff;
     object-fit: cover;
 }
+
 .grid-card__info {
     padding: 15px;
 }
+
 .grid-card__name {
     min-height: 60px;
     margin-bottom: 10px;
     font-size: 20px;
     font-weight: 700;
 }
+
 .grid-card__titles {
     min-height: 48px;
     color: #0061ff;
@@ -376,6 +434,7 @@
         width: calc(50% - 10px);
         max-width: 300px;
     }
+
     .specialist-grid-section__container {
         padding: 40px 100px;
     }
@@ -395,6 +454,7 @@
     .grid-card {
         width: calc(25% - 15px);
     }
+    
     .specialist-grid-section__container {
         padding: 40px 150px;
     }

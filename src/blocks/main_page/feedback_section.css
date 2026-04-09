@@ -1,118 +1,139 @@
 .feedback {
-  width: 100%;
-  padding: 40px 0;
-  background-color: #F8FAFF;
+    width: 100%;
+    padding: 25px 10px;
+    background-color: #fff;
 }
 
 .feedback__container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  padding: 0 10px;
-  margin: 0 auto;
-  gap: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 10px;
+    margin: 0 auto;
+    gap: 20px;
 }
 
 .feedback__card {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  box-sizing: border-box;
-  padding: 30px 20px;
-  border: 2px solid #0061FF;
-  border-radius: 10px;
-  background-color: #FFF;
-  text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 30px 20px;
+    border: 2px solid #0061ff;
+    border-radius: 10px;
+    background-color: #fff;
+    text-align: center;
 }
 
 .feedback__content {
-  margin-bottom: 25px;
+    margin-bottom: 25px;
 }
 
 .feedback__title {
-  margin-bottom: 10px;
-  color: #2D3135;
-  font-family: Montserrat, sans-serif;
-  font-size: 18px;
-  font-weight: 700;
+    margin-bottom: 10px;
+    color: #2d3135;
+    font-family: Montserrat, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
 }
 
 .feedback__description {
-  color: #6D7278;
-  font-family: Montserrat, sans-serif;
-  font-size: 14px;
-  font-weight: 400;
+    color: #6d7278;
+    font-family: Montserrat, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
 }
 
 .feedback__button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding: 15px 20px;
-  border-radius: 10px;
-  color: #FFF;
-  background-color: #0061FF;
-  transition: opacity 0.3s ease, background-color 0.3s ease;
-  text-transform: uppercase;
-  font-family: Montserrat, sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.feedback__button:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px #0061FF;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #0061ff;
+    transition:
+        background-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.1s ease;
+    text-transform: uppercase;
+    font-family: Montserrat, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
 }
 
 .feedback__button:hover {
-  opacity: 0.9;
+    background-color: #004ecc;
+    box-shadow: 0 4px 15px #0061ff4d;
 }
 
-@media screen and (min-width: 768px) {
-  .feedback__container {
-    padding: 0 45px;
-    gap: 30px;
-  }
+.feedback__button:focus-visible {
+    outline: 2px solid #003bb3;
+    outline-offset: 2px;
+}
 
-  .feedback__card {
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
-    text-align: left;
-    gap: 40px;
-  }
+.feedback__button:active {
+    background-color: #003bb3;
+    transform: scale(0.98);
+}
 
-  .feedback__content {
-    margin-bottom: 0;
-  }
+@media screen and (min-width: 968px) {
+    .feedback {
+        width: 100%;
+        padding: 25px 100px;
+        background-color: #fff;
+    }
 
-  .feedback__title {
-    font-size: 24px;
-  }
+    .feedback__container {
+        padding: 0 45px;
+        gap: 30px;
+    }
 
-  .feedback__description {
-    font-size: 16px;
-  }
+    .feedback__card {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+        text-align: left;
+        gap: 40px;
+    }
 
-  .feedback__button {
-    width: auto;
-    min-width: 300px;
-    border-radius: 50px;
-  }
+    .feedback__content {
+        margin-bottom: 0;
+    }
+
+    .feedback__title {
+        font-size: 28px;
+    }
+
+    .feedback__description {
+        font-size: 20px;
+    }
+
+    .feedback__button {
+        width: auto;
+        min-width: 300px;
+        font-size: 16px;
+    }
 }
 
 @media screen and (min-width: 1440px) {
-  .feedback__card {
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1400px;
-    padding: 40px 60px;
-    margin: 0 auto;
-    text-align: left;
-  }
+    .feedback {
+        width: 100%;
+        padding: 25px 200px;
+        background-color: #fff;
+    }
+
+    .feedback__card {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1400px;
+        padding: 40px 60px;
+        margin: 0 auto;
+        text-align: left;
+    }
 }
