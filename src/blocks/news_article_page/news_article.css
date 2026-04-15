@@ -31,26 +31,26 @@
 }
 
 .news-article__back-link:hover {
-    color: #0061ff;
+    color: #15853B;
     transform: translateX(-5px);
 }
 
 .news-article__back-link:hover svg path {
-    fill: #0061ff;
+    fill: #15853B;
 }
 
 .news-article__back-link:focus-visible {
-    outline: 2px solid #0061ff;
+    outline: 2px solid #15853B;
     outline-offset: 4px;
 }
 
 .news-article__back-link:active {
-    color: #004ecc;
+    color: #0F632C;
     transform: translateX(-8px);
 }
 
 .news-article__back-link:active svg path {
-    fill: #004ecc;
+    fill: #0F632C;
 }
 
 .news-article__card {

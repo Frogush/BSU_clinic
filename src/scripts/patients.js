@@ -20,7 +20,7 @@ function renderPatientsDocs() {
                 <a href="${item.link}" class="docs-item__button">
                     <span class="docs-item__button-text">Перейти</span>
                     <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0 10.2857L4.375 6L0 1.71429L0.875 0L7 6L0.875 12L0 10.2857Z" fill="#0061FF"/>
+                        <path d="M0 10.2857L4.375 6L0 1.71429L0.875 0L7 6L0.875 12L0 10.2857Z" fill="#15853B"/>
                     </svg>
                 </a>
             </article>

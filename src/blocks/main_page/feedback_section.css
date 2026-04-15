@@ -19,7 +19,7 @@
     flex-direction: column;
     box-sizing: border-box;
     padding: 30px 20px;
-    border: 2px solid #0061ff;
+    border: 2px solid #15853B;
     border-radius: 10px;
     background-color: #fff;
     text-align: center;
@@ -52,7 +52,7 @@
     padding: 15px 20px;
     border-radius: 5px;
     color: #fff;
-    background-color: #0061ff;
+    background-color: #15853B;
     transition:
         background-color 0.3s ease,
         box-shadow 0.3s ease,
@@ -65,17 +65,17 @@
 }
 
 .feedback__button:hover {
-    background-color: #004ecc;
-    box-shadow: 0 4px 15px #0061ff4d;
+    background-color: #0F632C;
+    box-shadow: 0 4px 15px #15853B4D;
 }
 
 .feedback__button:focus-visible {
-    outline: 2px solid #003bb3;
+    outline: 2px solid #0A451E;
     outline-offset: 2px;
 }
 
 .feedback__button:active {
-    background-color: #003bb3;
+    background-color: #0A451E;
     transform: scale(0.98);
 }
 

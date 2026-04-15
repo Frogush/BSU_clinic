@@ -52,7 +52,7 @@
 }
 
 .news-card:focus-visible {
-    outline: 2px solid #0061ff;
+    outline: 2px solid #15853B;
     outline-offset: 4px;
 }
 
@@ -138,7 +138,7 @@
     border: none;
     border-radius: 5px;
     color: #fff;
-    background-color: #0061ff;
+    background-color: #15853B;
     cursor: pointer;
     transition:
         background-color 0.3s ease,
@@ -151,17 +151,17 @@
 }
 
 .news__more-btn:hover {
-    background-color: #004ecc;
-    box-shadow: 0 4px 15px #0061ff4d;
+    background-color: #0F632C;
+    box-shadow: 0 4px 15px #15853B4d;
 }
 
 .news__more-btn:focus-visible {
-    outline: 2px solid #003bb3;
+    outline: 2px solid #0A451E;
     outline-offset: 2px;
 }
 
 .news__more-btn:active {
-    background-color: #003bb3;
+    background-color: #0A451E;
     transform: scale(0.97);
 }
 

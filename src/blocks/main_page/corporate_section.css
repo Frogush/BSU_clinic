@@ -46,9 +46,9 @@
     display: inline-flex;
     align-items: center;
     padding: 10px 25px;
-    border: 1px solid #0061ff;
+    border: 1px solid #15853B;
     border-radius: 20px;
-    color: #0061ff;
+    color: #15853B;
     background: none;
     cursor: pointer;
     transition:
@@ -68,7 +68,7 @@
 
 .corporate__button:hover {
     color: #fff;
-    background-color: #0061ff;
+    background-color: #15853B;
 }
 
 .corporate__button:hover svg path {
@@ -76,14 +76,14 @@
 }
 
 .corporate__button:focus-visible {
-    outline: 2px solid #0061ff;
+    outline: 2px solid #15853B;
     outline-offset: 2px;
 }
 
 .corporate__button:active {
-    border-color: #004ecc;
+    border-color: #0F632C;
     color: #fff;
-    background-color: #004ecc;
+    background-color: #0F632C;
     transform: scale(0.96);
 }
 
@@ -148,7 +148,7 @@
 }
 
 .modal__close:focus-visible {
-    outline: 2px solid #0061ff;
+    outline: 2px solid #15853B;
     outline-offset: 2px;
 }
 
@@ -197,16 +197,16 @@
 }
 
 .modal__phone:hover {
-    color: #0061ff;
+    color: #15853B;
 }
 
 .modal__phone:focus-visible {
-    outline: 2px solid #0061ff;
+    outline: 2px solid #15853B;
     outline-offset: 4px;
 }
 
 .modal__phone:active {
-    color: #004ecc;
+    color: #0F632C;
 }
 
 @media screen and (min-width: 1440px) {

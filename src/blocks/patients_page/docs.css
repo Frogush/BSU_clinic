@@ -42,7 +42,7 @@
 }
 
 .docs-nav__item:focus-visible {
-    outline: 3px solid #004ecc;
+    outline: 3px solid #0F632C;
     outline-offset: 4px;
 }
 
@@ -97,7 +97,7 @@
     display: block;
     width: 4px;
     height: 35px;
-    background-color: #0061ff;
+    background-color: #15853B;
     content: "";
 }
 
@@ -159,7 +159,7 @@
     justify-content: center;
     width: 40px;
     height: 40px;
-    border: 1px solid #0061ff;
+    border: 1px solid #15853B;
     border-radius: 50%;
     transition:
         background-color 0.3s ease,
@@ -179,7 +179,7 @@
 }
 
 .docs-item__button:hover {
-    background-color: #0061ff;
+    background-color: #15853B;
 }
 
 .docs-item__button:hover .docs-item__button-text {
@@ -191,13 +191,13 @@
 }
 
 .docs-item__button:focus-visible {
-    outline: 2px solid #0061ff;
+    outline: 2px solid #15853B;
     outline-offset: 2px;
 }
 
 .docs-item__button:active {
-    border-color: #004ecc;
-    background-color: #004ecc;
+    border-color: #0F632C;
+    background-color: #0F632C;
     transform: scale(0.96);
 }
 
@@ -243,7 +243,7 @@
 
     .docs-item__button-text {
         display: inline;
-        color: #0061ff;
+        color: #15853B;
         font-family: Montserrat, sans-serif;
         font-size: 12px;
         font-weight: 700;

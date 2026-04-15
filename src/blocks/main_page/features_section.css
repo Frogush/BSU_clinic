@@ -25,7 +25,7 @@
 }
 
 .hero__subtitle {
-    color: #0061ff;
+    color: #15853B;
     animation-name: fadeUp;
     animation-delay: 0.2s;
     font-family: Montserrat, sans-serif;
@@ -60,7 +60,7 @@
     border: none;
     border-radius: 5px;
     color: #fff;
-    background-color: #0061ff;
+    background-color: #15853B;
     cursor: pointer;
     transition:
         background-color 0.3s ease,
@@ -72,17 +72,17 @@
 }
 
 .hero__appointment-btn:hover {
-    background-color: #004ecc;
-    box-shadow: 0 4px 15px #0061ff4d;
+    background-color: #0F632C;
+    box-shadow: 0 4px 15px #15853B4d;
 }
 
 .hero__appointment-btn:focus-visible {
-    outline: 2px solid #003bb3;
+    outline: 2px solid #0A451E;
     outline-offset: 2px;
 }
 
 .hero__appointment-btn:active {
-    background-color: #003bb3;
+    background-color: #0A451E;
     transform: scale(0.97);
 }
 
@@ -143,7 +143,7 @@
         border: none;
         border-radius: 5px;
         color: #fff;
-        background-color: #0061ff;
+        background-color: #15853B;
         cursor: pointer;
         font-family: Montserrat, sans-serif;
         font-size: 16px;
@@ -226,7 +226,7 @@
     width: 64px;
     height: 64px;
     border-radius: 50%;
-    background-color: #0061ff;
+    background-color: #15853B;
 }
 
 .card__title {
@@ -241,7 +241,7 @@
     width: 100%;
     height: 2px;
     margin-bottom: 20px;
-    background-color: #0061ff;
+    background-color: #15853B;
 }
 
 .card__text {

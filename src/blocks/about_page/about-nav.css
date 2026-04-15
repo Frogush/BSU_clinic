@@ -41,7 +41,7 @@
 }
 
 .about-nav__item:focus-visible {
-    outline: 3px solid #004ecc;
+    outline: 3px solid #0F632C;
     outline-offset: 4px;
 }
 

@@ -32,7 +32,7 @@
 }
 
 .header__burger:focus-visible {
-    outline: 2px solid #0061ff;
+    outline: 2px solid #15853B;
     outline-offset: 4px;
 }
 
@@ -53,7 +53,7 @@
 }
 
 .header__logo-link:focus-visible {
-    outline: 2px solid #0061ff;
+    outline: 2px solid #15853B;
     outline-offset: 4px;
 }
 
@@ -75,7 +75,7 @@
     border: none;
     border-radius: 5px;
     color: #fff;
-    background-color: #0061ff;
+    background-color: #15853B;
     cursor: pointer;
     transition:
         background-color 0.3s ease,
@@ -87,17 +87,17 @@
 }
 
 .header__admin-btn:hover {
-    background-color: #004ecc;
-    box-shadow: 0 4px 15px #0061ff4d;
+    background-color: #0f632c;
+    box-shadow: 0 4px 15px #15853B4d;
 }
 
 .header__admin-btn:focus-visible {
-    outline: 2px solid #003bb3;
+    outline: 2px solid #0a451e;
     outline-offset: 2px;
 }
 
 .header__admin-btn:active {
-    background-color: #003bb3;
+    background-color: #0a451e;
     transform: scale(0.97);
 }
 
@@ -130,8 +130,8 @@
     height: 100%;
     box-sizing: border-box;
     padding: 20px;
-    border-right: 3px #0061ff solid;
-    background-color: #e2ecfc;
+    border-right: 3px #15853B solid;
+    background-color: #e6f2e9;
     transition: left 0.4s ease;
 }
 
@@ -157,7 +157,7 @@
 }
 
 .header__sidebar-close:focus-visible {
-    outline: 2px solid #0061ff;
+    outline: 2px solid #15853B;
     outline-offset: 4px;
 }
 
@@ -191,22 +191,22 @@
 }
 
 .header__sidebar-link:hover {
-    color: #0061ff;
+    color: #15853B;
 }
 
 .header__sidebar-link:focus-visible {
-    outline: 2px solid #0061ff;
+    outline: 2px solid #15853B;
     outline-offset: 4px;
 }
 
 .header__sidebar-link:active {
-    color: #004ecc;
+    color: #0f632c;
 }
 
 .header__sidebar-link_active {
     display: inline-block;
     padding-bottom: 2px;
-    border-bottom: 2px solid #0061ff;
+    border-bottom: 2px solid #15853B;
     color: #2d3135;
 }
 
@@ -278,21 +278,21 @@
     }
 
     .header__nav-link:hover {
-        color: #0061ff;
+        color: #15853B;
     }
 
     .header__nav-link:focus-visible {
-        outline: 2px solid #0061ff;
+        outline: 2px solid #15853B;
         outline-offset: 4px;
     }
 
     .header__nav-link:active {
-        color: #004ecc;
+        color: #0f632c;
     }
 
     .header__nav-link_active {
         padding-bottom: 2px;
-        border-bottom: 3px solid #0061ff;
+        border-bottom: 3px solid #15853B;
         color: #2d3135;
     }
 

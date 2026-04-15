@@ -13,7 +13,8 @@
     border: none;
     border-radius: 50%;
     opacity: 0;
-    background-color: #fff;
+    /* Теперь кнопка изначально зеленая */
+    background-color: #15853B; 
     box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: all 0.4s ease;
@@ -26,22 +27,24 @@
     transform: translateY(0);
 }
 
-.scroll-top:hover {
-    background-color: #0061FF;
-    box-shadow: 0 8px 16px 0 rgba(0, 97, 255, 0.3);
-    transform: translateY(-5px);
-}
-
-.scroll-top:hover svg circle {
-    stroke: #fff;
-}
-
-.scroll-top:hover svg path {
-    stroke: #fff;
+/* Эффект наведения только для ПК (решает проблему залипания на мобилках) */
+@media (hover: hover) {
+    .scroll-top:hover {
+        background-color: #0F632C; /* Темно-зеленый при наведении */
+        box-shadow: 0 8px 16px 0 #15853B4D;
+        transform: translateY(-5px);
+    }
 }
 
 .scroll-top:active {
+    background-color: #0A441E; /* Еще темнее при нажатии */
     transform: scale(0.9);
+}
+
+/* Цвет иконок внутри кнопки теперь всегда белый */
+.scroll-top svg circle,
+.scroll-top svg path {
+    stroke: #FFFFFF;
 }
 
 @media screen and (max-width: 768px) {

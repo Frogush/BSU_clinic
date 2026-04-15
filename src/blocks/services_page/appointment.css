@@ -77,8 +77,8 @@
 
 .appointment__input:focus,
 .appointment__textarea:focus {
-    border-color: #0061ff;
-    outline: 2px solid #0061ff;
+    border-color: #15853B;
+    outline: 2px solid #15853B;
     background-color: #fff;
 }
 
@@ -123,15 +123,15 @@
 }
 
 .appointment__checkbox:checked + .appointment__checkbox-custom {
-    border-color: #0061ff;
-    background-color: #0061ff;
+    border-color: #15853B;
+    background-color: #15853B;
     background-image: url("data:image/svg+xml,%3Csvg width='12' height='10' viewBox='0 0 12 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 5L4.5 8.5L11 1' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: center;
 }
 
 .appointment__checkbox:focus-visible + .appointment__checkbox-custom {
-    outline: 2px solid #0061ff;
+    outline: 2px solid #15853B;
     outline-offset: 4px;
 }
 
@@ -152,7 +152,7 @@
     border: none;
     border-radius: 5px;
     color: #fff;
-    background-color: #0061ff;
+    background-color: #15853B;
     cursor: pointer;
     transition:
         background-color 0.3s ease,
@@ -164,17 +164,17 @@
 }
 
 .appointment__submit:hover {
-    background-color: #004ecc;
-    box-shadow: 0 4px 15px #0061ff4d;
+    background-color: #0F632C;
+    box-shadow: 0 4px 15px #15853B4d;
 }
 
 .appointment__submit:focus-visible {
-    outline: 2px solid #003bb3;
+    outline: 2px solid #0A451E;
     outline-offset: 2px;
 }
 
 .appointment__submit:active {
-    background-color: #003bb3;
+    background-color: #0A451E;
     transform: scale(0.97);
 }
 

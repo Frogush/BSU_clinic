@@ -74,7 +74,7 @@
 }
 
 .discounts__header:hover .discounts__item-title {
-    color: #0061ff;
+    color: #15853B;
 }
 
 .discounts__header:hover {
@@ -83,7 +83,7 @@
 
 .discounts__header:focus-visible {
     border-radius: 10px;
-    outline: 2px solid #0061ff;
+    outline: 2px solid #15853B;
     outline-offset: -2px;
 }
 
@@ -97,11 +97,11 @@
 }
 
 .discounts__header:hover .discounts__arrow path {
-    stroke: #004ecc;
+    stroke: #0F632C;
 }
 
 .discounts__header:hover .discounts__arrow {
-    filter: drop-shadow(0 0 5px #0061ff4d);
+    filter: drop-shadow(0 0 5px #15853B4D);
 }
 
 .discounts__item_opened .discounts__arrow {

@@ -61,7 +61,7 @@
 }
 
 .service-card:focus-within {
-    outline: 2px solid #0061ff;
+    outline: 2px solid #15853B;
 }
 
 .service-card:hover .service-card__image {
@@ -90,7 +90,7 @@
 
 .service-card__category {
     margin-bottom: 15px;
-    color: #0061ff;
+    color: #15853B;
     font-family: Montserrat, sans-serif;
     font-size: 14px;
     font-weight: 700;
@@ -124,9 +124,9 @@
     align-items: center;
     width: fit-content;
     padding: 8px 16px;
-    border: 1px solid #0061ff;
+    border: 1px solid #15853B;
     border-radius: 20px;
-    color: #0061ff;
+    color: #15853B;
     transition:
         background-color 0.3s ease,
         color 0.3s ease,
@@ -145,7 +145,7 @@
 
 .service-card__link:hover {
     color: #fff;
-    background-color: #0061ff;
+    background-color: #15853B;
 }
 
 .service-card__link:hover svg path {
@@ -153,13 +153,13 @@
 }
 
 .service-card__link:focus-visible {
-    outline: 2px solid #0061ff;
+    outline: 2px solid #15853B;
 }
 
 .service-card__link:active {
-    border-color: #004ecc;
+    border-color: #0F632C;
     color: #fff;
-    background-color: #004ecc;
+    background-color: #0F632C;
     transform: scale(0.96);
 }
 
