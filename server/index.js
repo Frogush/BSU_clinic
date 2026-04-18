@@ -1278,7 +1278,7 @@ app.put('/api/admin/schedule/:id', authenticateToken, async (req, res) => {
     }
 });
 
-app.get/.*/, (req, res, next) => {
+app.get(/.*/, (req, res, next) => {
     if (req.url.startsWith('/api') || req.url.startsWith('/uploads')) {
         return next();
     }
