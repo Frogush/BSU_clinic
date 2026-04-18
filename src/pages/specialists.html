@@ -3,7 +3,29 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Поликлиника БелГУ</title>
+        
+        <link rel="icon" type="image/x-icon" href="<%=require('../images/favicon.ico')%>" />
+        <link rel="icon" type="image/png" sizes="32x32" href="<%=require('../images/favicon-32x32.png')%>" />
+        <link rel="icon" type="image/png" sizes="16x16" href="<%=require('../images/favicon-16x16.png')%>" />
+        <link rel="apple-touch-icon" sizes="180x180" href="<%=require('../images/apple-touch-icon.png')%>" />
+        
+        <title>Поликлиника НИУ "БелГУ" | Специалисты</title>
+        <meta name="title" content="Поликлиника НИУ 'БелГУ' | Специалисты" />
+        <meta name="description" content="Поликлиника Белгородского государственного университета. Квалифицированная медицинская помощь студентам, сотрудникам и жителям Белгорода." />
+        <meta name="keywords" content="поликлиника БелГУ, медицинский центр Белгород, врачи Белгород, запись к врачу, медицинские услуги, поликлиника НИУ БелГУ" />
+        <meta name="author" content="Поликлиника НИУ 'БелГУ'" />
+        <meta name="robots" content="index, follow" />
+        <meta name="language" content="Russian" />
+        <meta name="revisit-after" content="7 days" />
+        
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="<%=require('../images/og-image.png')%>" />
+        <meta property="og:title" content="Поликлиника НИУ 'БелГУ' | Специалисты" />
+        <meta property="og:description" content="Поликлиника Белгородского государственного университета. Квалифицированная медицинская помощь студентам, сотрудникам и жителям Белгорода." />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="Поликлиника НИУ 'БелГУ'" />
+        <meta property="og:locale" content="ru_RU" />
     </head>
     <body class="page">
         <header class="header">
@@ -80,7 +102,7 @@
                     </nav>
                 </div>
 
-                <button class="header__admin-btn" type="button">
+                <a href="/pages/admin.html" class="header__admin-btn">
                     Админ панель
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -96,7 +118,7 @@
                             clip-rule="evenodd"
                         />
                     </svg>
-                </button>
+                </a>
             </div>
 
             <div class="header__overlay" role="presentation"></div>

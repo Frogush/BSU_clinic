@@ -61,17 +61,18 @@ module.exports = {
 
   // Настройки локального сервера разработки
   devServer: {
-    // Папка, из которой сервер будет раздавать файлы
-    static: path.resolve(__dirname, "./dist"),
-    // Включает gzip-сжатие для ускорения загрузки
-    compress: true,
-    // Порт, на котором будет запущен сервер
-    port: 8081,
-    // Автоматически открывает проект в браузере после запуска
-    open: true,
-    // Позволяет использовать HTML5 History API (SPA-маршрутизация)
-    historyApiFallback: true,
-  },
+      static: path.resolve(__dirname, "./dist"),
+      compress: true,
+      port: 8081,
+      open: true,
+      historyApiFallback: true,
+      proxy: [
+        {
+          context: ['/api', '/uploads'], // все запросы на /api и /uploads
+          target: 'http://localhost:3000', // перенаправлять на наш будущий сервер
+        },
+      ],
+    },
 
   performance: {
     maxEntrypointSize: 512000, // Увеличиваем лимит до ~500 Кб
@@ -90,7 +91,7 @@ module.exports = {
       },
       {
         // Обработка изображений (png, svg, jpg, gif и т.д.)
-        test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
+        test: /\.(png|svg|jpg|jpeg|gif|webp|ico)$/i,
         // Тип ресурса — Webpack сам копирует файл и возвращает ссылку на него
         type: "asset/resource",
         // Настройки генерации имени файлов (папка, оригинальное имя, хэш, расширение)

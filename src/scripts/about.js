@@ -1,10 +1,16 @@
 import "../styles/about.css"
 import { initSidebar } from "../components/sidebar.js";
-import { clinicContacts } from "../components/data.js";
 import { initScrollTop } from "../components/scroll-top.js";
 
 initSidebar();
 
+// Переменная для хранения полученных данных
+let clinicContacts = {
+    phones: [],
+    weekSchedule: []
+};
+
+// Аккордеоны (скидки) — оставляем без изменений
 document.querySelectorAll('.discounts__header').forEach(header => {
     header.addEventListener('click', () => {
         const item = header.closest('.discounts__item');
@@ -14,23 +20,45 @@ document.querySelectorAll('.discounts__header').forEach(header => {
     });
 });
 
+// ГЛАВНАЯ ФУНКЦИЯ ЗАГРУЗКИ
+async function initAboutPage() {
+    try {
+        const response = await fetch('/api/contacts');
+        const data = await response.json();
+        
+        // В базе расписание называется schedule, переложим в нашу переменную
+        clinicContacts.phones = data.phones;
+        clinicContacts.weekSchedule = data.schedule;
+
+        renderClinicInfo();
+    } catch (error) {
+        console.error("Ошибка при получении контактов:", error);
+    }
+}
+
+// Улучшенная функция группировки (адаптирована под БД)
 function getGroupedSchedule(schedule) {
     if (!schedule || schedule.length === 0) return [];
 
     const groups = [];
     let currentGroup = null;
 
-    schedule.forEach((item, index) => {
-        if (!currentGroup || currentGroup.hours !== item.hours || currentGroup.isOff !== item.isOff) {
+    schedule.forEach((item) => {
+        // Формируем строку времени для сравнения (например "08:00-18:00" или "-")
+        const timeString = item.is_off ? "-" : `${item.start_time}-${item.end_time}`;
+        
+        // Если это первый день или время работы изменилось — создаем новую группу
+        if (!currentGroup || currentGroup.timeString !== timeString) {
             currentGroup = {
-                startDay: item.day,
-                endDay: item.day,
-                hours: item.hours,
-                isOff: item.isOff
+                startDay: item.day_name,
+                endDay: item.day_name,
+                timeString: timeString,
+                isOff: Boolean(item.is_off)
             };
             groups.push(currentGroup);
         } else {
-            currentGroup.endDay = item.day;
+            // Если время такое же — просто продлеваем текущую группу (например, ПН-ПТ)
+            currentGroup.endDay = item.day_name;
         }
     });
 
@@ -42,7 +70,7 @@ function getGroupedSchedule(schedule) {
         return {
             label: group.isOff ? "Выходные дни" : "Рабочие дни",
             days: dayRange,
-            time: group.hours
+            time: group.timeString
         };
     });
 }
@@ -51,6 +79,7 @@ function renderClinicInfo() {
     const infoSection = document.querySelector('.contacts-info');
     if (!infoSection) return;
 
+    // Отрисовка телефонов
     const phoneList = infoSection.querySelector('.contacts-info__list');
     if (phoneList) {
         phoneList.innerHTML = clinicContacts.phones.map(phone => `
@@ -58,6 +87,7 @@ function renderClinicInfo() {
         `).join('');
     }
 
+    // Отрисовка расписания
     const scheduleCard = infoSection.querySelectorAll('.contacts-info__card')[1];
     const scheduleContent = scheduleCard?.querySelector('.contacts-info__content');
 
@@ -66,12 +96,13 @@ function renderClinicInfo() {
         
         scheduleContent.innerHTML = groupedData.map(group => `
             <p class="contacts-info__text">
-                ${group.label}: ${group.days} 
+                <strong>${group.label}:</strong> ${group.days} 
                 ${group.time !== '-' ? `<br> ${group.time}` : ''}
             </p>
         `).join('');
     }
 }
 
-renderClinicInfo();
+// Запускаем загрузку
+initAboutPage();
 initScrollTop();

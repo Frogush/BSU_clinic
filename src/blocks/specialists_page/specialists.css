@@ -202,8 +202,16 @@
 
     .detailed-card__inner {
         display: flex;
-        align-items: flex-start;
+        align-items: stretch;
         gap: 30px;
+        max-height: 440px; 
+    }
+
+    .detailed-card__inner > div:last-child {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        min-width: 0;
     }
 
     .detailed-card__image-box {
@@ -264,10 +272,32 @@
 
     .detailed-card__education {
         display: block;
-        overflow-x: hidden;
         overflow-y: auto;
-        max-height: 100px;
+        flex: 1 1 auto;
+        max-height: none;
         font-size: 14px;
+        padding-right: 10px;
+        scrollbar-width: thin;
+        scrollbar-color: #15853B #e8f0e8;
+    }
+    
+    .detailed-card__education::-webkit-scrollbar {
+        width: 6px;
+        display: block;
+    }
+
+    .detailed-card__education::-webkit-scrollbar-track {
+        background: #e8f0e8;
+        border-radius: 10px;
+    }
+
+    .detailed-card__education::-webkit-scrollbar-thumb {
+        background: #15853B;
+        border-radius: 10px;
+    }
+
+    .detailed-card__education::-webkit-scrollbar-thumb:hover {
+        background: #0f632c;
     }
 
     .detailed-card__edu-title {
@@ -351,10 +381,10 @@
         right: -80px;
     }
 
-    .detailed-card__education {
-        overflow-x: hidden;
+.detailed-card__education {
+        flex: 1 1 auto;
+        max-height: none;
         overflow-y: auto;
-        max-height: 210px;
     }
 }
 

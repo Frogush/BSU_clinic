@@ -84,6 +84,7 @@
     font-family: Montserrat, sans-serif;
     font-size: 7px;
     font-weight: 700;
+    text-decoration: none;
 }
 
 .header__admin-btn:hover {

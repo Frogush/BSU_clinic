@@ -6,6 +6,7 @@
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack serve",
+    "server": "node server/index.js",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist -r https://github.com/Frogush/BSU_clinic.git"
   },
@@ -42,6 +43,13 @@
     "webpack-dev-server": "^5.2.2"
   },
   "dependencies": {
-    "core-js": "^3.46.0"
+    "bcryptjs": "^3.0.3",
+    "body-parser": "^2.2.2",
+    "core-js": "^3.46.0",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "multer": "^2.1.1",
+    "sqlite3": "^6.0.1"
   }
 }
