@@ -12,6 +12,7 @@ const SECRET_KEY = 'BSU_CLINIC_SUPER_SECRET';
 app.use(cors());
 app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use(express.static(path.join(__dirname, '../dist')));
 
 // Middleware для проверки токена
 const authenticateToken = (req, res, next) => {
@@ -1275,6 +1276,13 @@ app.put('/api/admin/schedule/:id', authenticateToken, async (req, res) => {
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
+});
+
+app.get('*', (req, res, next) => {
+    if (req.url.startsWith('/api') || req.url.startsWith('/uploads')) {
+        return next();
+    }
+    res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
 
 app.listen(PORT, () => {

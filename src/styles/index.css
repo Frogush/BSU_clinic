@@ -1,7 +1,7 @@
 @import url('../vendor/global.css');
 @import url('../vendor/normalize.css');
 @import url('../vendor/fonts.css');
-@import url('../Vendor/scroll-top.css');
+@import url('../vendor/scroll-top.css');
 @import url('../blocks/header.css');
 @import url('../blocks/footer.css');
 @import url('../blocks/main_page/features_section.css');
