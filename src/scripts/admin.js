@@ -1,7 +1,7 @@
 import "../styles/admin.css";
 
 const root = document.getElementById('admin-root');
-const API_URL = 'http://localhost:3000/api';
+const API_URL = '/api';
 
 // Состояние приложения
 let currentUser = null;
@@ -702,7 +702,7 @@ async function renderNewsTab(container) {
             }
             listDiv.innerHTML = `<div class="admin-cards-grid">${news.map(item => `
                 <div class="admin-news-card" data-id="${item.id}">
-                    ${item.image_url ? `<img src="http://localhost:3000${item.image_url}" alt="${escapeHtml(item.title)}" class="admin-news-card__image">` : '<div class="admin-news-card__image admin-news-card__image_placeholder">📰</div>'}
+                    ${item.image_url ? `<img src="${item.image_url}" alt="${escapeHtml(item.title)}" class="admin-news-card__image">` : '<div class="admin-news-card__image admin-news-card__image_placeholder">📰</div>'}
                     <div class="admin-news-card__content">
                         <h4>${escapeHtml(item.title)}</h4>
                         <p class="admin-news-card__date">${new Date(item.date).toLocaleString('ru-RU')}</p>
@@ -752,7 +752,7 @@ async function renderNewsTab(container) {
             paragraphs = news.content || [];
             renderParagraphs();
             if (news.image_url) {
-                document.getElementById('news-image-preview').innerHTML = `<img src="http://localhost:3000${news.image_url}" alt="Preview">`;
+                document.getElementById('news-image-preview').innerHTML = `<img src="${news.image_url}" alt="Preview">`;
                 document.getElementById('remove-news-image').style.display = 'inline-block';
                 deleteCurrentImage = false;
             } else {
@@ -949,7 +949,7 @@ async function renderSpecialistsTab(container) {
             }
             listDiv.innerHTML = `<div class="admin-cards-grid">${specialists.map(item => `
                 <div class="admin-news-card">
-                    <img src="http://localhost:3000${item.image_url || '/uploads/specialists_images/doctor_0.png'}" alt="${escapeHtml(item.name)}" class="admin-news-card__image">
+                    <img src="${item.image_url || '/uploads/specialists_images/doctor_0.png'}" alt="${escapeHtml(item.name)}" class="admin-news-card__image">
                     <div class="admin-news-card__content">
                         <h4>${escapeHtml(item.name)}</h4>
                         <p class="admin-specialist-titles">${escapeHtml(item.titles)}</p>
@@ -1001,7 +1001,7 @@ async function renderSpecialistsTab(container) {
             educationItems = specialist.education && specialist.education.length ? [...specialist.education] : [''];
             renderEducation();
             const imageUrl = specialist.image_url || '/uploads/specialists_images/doctor_0.png';
-            document.getElementById('specialist-image-preview').innerHTML = `<img src="http://localhost:3000${imageUrl}" alt="Preview">`;
+            document.getElementById('specialist-image-preview').innerHTML = `<img src="${imageUrl}" alt="Preview">`;
             if (specialist.image_url && specialist.image_url !== '/uploads/specialists_images/doctor_0.png') {
                 document.getElementById('remove-specialist-image').style.display = 'inline-block';
                 deleteCurrentImage = false;
@@ -1210,7 +1210,7 @@ async function renderServicesTab(container) {
             }
             listDiv.innerHTML = `<div class="admin-categories-list">${categories.map(cat => `
                 <div class="admin-category-item ${selectedCategoryId === cat.id ? 'admin-category-item_active' : ''}" data-id="${cat.id}">
-                    <img src="http://localhost:3000${cat.image_url || '/uploads/service_images/service_0.png'}" alt="${escapeHtml(cat.name)}" class="admin-category-item__image">
+                    <img src="${cat.image_url || '/uploads/service_images/service_0.png'}" alt="${escapeHtml(cat.name)}" class="admin-category-item__image">
                     <div class="admin-category-item__content">
                         <h4>${escapeHtml(cat.name)}</h4>
                         <p class="admin-category-item__group">${escapeHtml(cat.category)}</p>
@@ -1344,7 +1344,7 @@ async function renderServicesTab(container) {
             document.getElementById('category-group').value = category.category;
             document.getElementById('category-description').value = category.description || '';
             const imageUrl = category.image_url || '/uploads/service_images/service_0.png';
-            document.getElementById('category-image-preview').innerHTML = `<img src="http://localhost:3000${imageUrl}" alt="Preview">`;
+            document.getElementById('category-image-preview').innerHTML = `<img src="${imageUrl}" alt="Preview">`;
             if (category.image_url && category.image_url !== '/uploads/service_images/service_0.png') {
                 document.getElementById('remove-category-image').style.display = 'inline-block';
                 deleteCurrentImage = false;
