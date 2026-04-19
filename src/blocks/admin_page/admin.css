@@ -74,7 +74,7 @@ body {
     height: 100vh;
     z-index: 100;
     transition: left 0.4s ease;
-    overflow-y: auto; /* Добавляем скролл внутри сайдбара если контента много */
+    overflow-y: auto;
 }
 
 /* Стилизация скроллбара для сайдбара */
@@ -178,6 +178,12 @@ body {
     min-height: 100vh;
 }
 
+/* НОВЫЙ КЛАСС-ОБЕРТКА ДЛЯ КОНТЕНТА ТАБОВ */
+.admin-main__content {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
 .admin-header {
     display: flex;
     align-items: center;
@@ -209,6 +215,8 @@ body {
     border-radius: 12px;
     margin-bottom: 30px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    /* Убираем overflow hidden, чтобы скролл работал правильно */
+    overflow-x: auto;
 }
 
 .admin-section__header {
@@ -216,6 +224,8 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .admin-section__title {
@@ -384,6 +394,7 @@ body {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    min-width: 500px; /* Минимальная ширина таблицы, чтобы на мобильных был скролл */
 }
 
 .admin-table th {
@@ -760,14 +771,54 @@ body.admin-modal-open {
     }
 }
 
+/* МОБИЛЬНЫЕ УСТРОЙСТВА - ограничиваем ширину контента и добавляем скролл */
 @media (max-width: 768px) {
-    .admin-cards-grid {
-        grid-template-columns: 1fr;
+    /* Ограничиваем максимальную ширину секций и добавляем скролл */
+    .admin-section {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        overflow-x: auto;
     }
     
+    /* Контейнер для основного контента также ограничиваем */
+    .admin-main {
+        overflow-x: auto;
+    }
+    
+    /* Убираем ограничение ширины у сетки карточек, чтобы карточки были нормальной ширины */
+    .admin-cards-grid {
+        grid-template-columns: 1fr;
+        min-width: auto;
+    }
+    
+    /* Для таблиц оставляем возможность скролла */
+    .admin-table {
+        min-width: 500px;
+    }
+    
+    /* Документация - колонки в столбец */
+    .admin-docs-sections {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    /* Модальные окна на мобильных - на всю ширину */
     .admin-modal_large .admin-modal__content {
         min-width: auto;
         width: 95%;
+        max-width: 95%;
+    }
+    
+    .admin-modal__content {
+        min-width: auto;
+        width: 90%;
+        max-width: 90%;
+    }
+    
+    /* Убираем минимальную ширину у карточек на мобильных */
+    .admin-news-card {
+        min-width: auto;
     }
 }
 
